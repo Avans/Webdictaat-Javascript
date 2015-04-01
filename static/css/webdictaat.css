@@ -1,0 +1,260 @@
+figure {
+    clear: both;
+}
+
+p > code, li > code, dt > code, dd > code {
+    padding: 0;
+}
+.mono {
+    font-family: monospace;
+}
+
+.assignment {
+    clear: both;
+}
+
+.ace_hidden-cursors {
+    opacity:0;
+}
+
+.ace_scroller {
+    background-color: transparent !important;
+}
+
+.assignment img.screenshot {
+    box-shadow: 0 0 30px #888;
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    float: right;
+    margin: 40px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    max-width: 40%;
+}
+@media screen and (max-width: 1000px){
+    .assignment img.screenshot {
+        float: none;
+        max-width: 80%;
+    }
+}
+
+.tip {
+    float: right;
+    width: 30%;
+    font-size:  smaller;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 5px;
+}
+
+.filename {
+    font-family: Courier, monospace;
+    background-color: #EEE;
+}
+
+.assignment {
+    padding-left: 30px !important;
+    padding-bottom: 20px;
+    margin-bottom: 7px;
+}
+
+.easy, .medium, .hard {
+    padding-left: 3px;
+}
+
+.easy {
+    border-left: 3px solid rgba(0,200,0,0.7);
+}
+
+.medium {
+    border-left: 4px solid rgba(240,240,0,0.7);
+}
+
+.hard {
+    border-left: 4px solid rgba(240,0,0,0.7);
+}
+
+/* Live preview stuff */
+
+.editor {
+    position: relative;
+    width: 50% !important;
+    float: left !important;
+    margin: 0;
+    border: 1px solid rgb(225, 225, 232);
+    box-sizing: border-box;
+    border-radius: 0;
+    font-size: 12px;
+    clear: right;
+
+    background-color: #f7f7f9 !important;
+    line-height: 20px !important;
+
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+code.livepreview {
+    display: block;
+    width: 50%;
+    font-size: 12px;
+    line-height: 20px !important;
+    white-space: pre-wrap;
+    padding: 8px !important;
+    box-sizing: border-box;
+}
+
+code.livepreview select, input {
+    width: 1px;
+}
+
+.editor select, .editor input {
+    padding: 0;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    width: 25%;
+}
+
+.editor.css {
+    border-top-left-radius: 8px;
+    border-bottom-width: 0;
+}
+
+.css {
+    color: #bc0000;
+    background-image: url(../img/css.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.html {
+    background-image: url(../img/html.png);
+    color: #d14;
+    clear: left;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.css + .html {
+    border-top-left-radius: 0;
+}
+
+
+
+pre, code {
+    padding: 8px;
+}
+
+iframe.live_preview {
+    width: 50%;
+    border: 1px solid rgb(225, 225, 232);
+    border-left-width: 0;
+    box-sizing: border-box;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+p.live_preview {
+    clear: both;
+    margin-bottom: 15px;
+}
+
+.pre {
+    display: block;
+    white-space: pre-wrap;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+.nav ol {
+    list-style-type: decimal;
+    list-style-position:inside;
+}
+
+#theory > li > a{
+    color: purple !important;
+}
+
+img.screenshot {
+    display: block;
+    margin: 2em auto 1em auto;
+    box-shadow: 0 0 30px #888;
+    max-width: 80%;
+    clear: right;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.colorbox {
+  padding: 3px;
+  margin: 2px;
+}
+
+/* Anatomy stuff */
+ .anatomy {
+     font-family: Courier; monospace;
+     font-weight: normal;
+     font-size: 40px;
+     white-space: nowrap;
+     margin-top: 40px;
+     margin-bottom: 40px;
+ }
+
+ .anatomy .arch.green {
+     color: rgb(0, 202, 44);
+     border-color: rgb(0, 202, 44);
+ }
+
+ .anatomy .arch.blue {
+       color: rgb(0, 120, 248);
+       border-color: rgb(0, 120, 248);
+  }
+
+  .anatomy .arch.purple {
+      color: rgb(147, 108, 177);
+      border-color: rgb(147, 108, 177);
+  }
+
+  .anatomy .arch.red {
+      color: rgb(255, 0, 0);
+      border-color: rgb(255, 0, 0);
+  }
+
+ .arch {
+     display: inline-block;
+     position: relative;
+ }
+
+ .arch > div {
+     box-sizing: border-box;
+     font-size: 0.3em;
+     font-family: "Helvetica Neue";
+     font-weight: 500;
+
+     text-align: center;
+     width: 100%;
+
+     border-width: 3px;
+     border-style: solid;
+
+     margin-top: 0.2em;
+     margin-bottom: 0.7em;
+     padding: 0.1em;
+ }
+
+ .arch.upper > div {
+     border-bottom-width: 0;
+ }
+
+ .arch.lower > div {
+     position: absolute;
+     bottom: -50px;
+
+     border-top-width: 0;
+ }

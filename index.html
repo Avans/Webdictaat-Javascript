@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Webdictaat Javascript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Frans Spijkerman &amp; Paul Wagener">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="static/css/webdictaat.css" rel="stylesheet">
+    <link rel="shortcut icon" href="http://www.avans.nl/favicon.64.png">
+
+    <script src="static/js/jquery-1.9.1.js"></script>
+    <script src="static/js/jquery-ui.js"></script>
+    <script src="static/ace/ace.js"></script>
+    <script src="static/js/webdictaat.js"></script>
+
+    <script src="static/js/prettify.packed.js"></script>
+    <script src="static/js/console.js"></script>'
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="index.html">Webdictaat Javascript</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list" id="theory">
+              <li class="nav-header">Theorie</li>
+              <li><a href="#">Week 1. Javascript basis</a>
+                    <ol class="nav nav-list">
+                    <li><a href="basis/javascript.html">Over Javascript</a></li>
+                    <li><a href="">Een eerste programma</a></li>
+                    <li><a href="">Types</a></li>
+                    <li><a href="">Functions</a></li>
+                    </ol>
+              </li>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <article class="span9" id="content">
+            Welkom in het webdictaat. Kies iets in het menu
+            <br><br><br><br><br><br><br><br>
+
+<iframe id="fillme" style="display: block; width: 800px; height: 600px;">
+
+</iframe>
+
+<code class="javascript oneline"></code>
+
+<script>
+    var iframe = $('#fillme').contents()
+
+    iframe.find('head').append('<link href="static/css/console.css" rel="stylesheet">');
+
+    var c = new consolejs(iframe[0].defaultView, iframe.find('body')[0]);
+    c.run('"Hello World"');
+</script>
+            Javascript console
+        </article><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>2014 Avans</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+  </body>
+</html>
