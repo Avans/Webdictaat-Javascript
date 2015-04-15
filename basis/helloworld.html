@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<body>
+
+<img src="console.png" alt="JavaScript console" class="pull-right screenshot" style="width: 30%; clear: both; margin: 30px;">
+
+<h2>Een eerste programma</h2>
+
+<p>JavaScript schrijven is de makkelijkste programmeertaal om te installeren, we hebben namelijk geen speciale IDE's of compilers nodig. Het enige wat je nodig hebt is: 1. een browser en 2. een teksteditor. En je hebt inmiddels vast een favoriete versie van beide.</p>
+
+<p>Een belangrijke tool die je gaat gebruiken zijn de  <b>ontwikkelhulpprogramma's</b> die in elke browser zitten (onderaan <a href="http://avans.github.io/Webdictaat/#/css/intro.html" target="_blank">deze pagina</a> staat hoe je die opent). In het <b>Console</b> tabje zie je alle fouten die in je Javascript zitten en de output van de console.log() functie. We kunnen hier ook rechtstreeks JavaScript typen.</p>
+
+<div class="easy">
+<p>Probeer de volgende stukjes JavaScript uit in de console en kijk wat ze doen:</p>
+  <ul>
+    <li><code>alert("Hallo Wereld");</code></li>
+    <li><code>console.log("Hallo Wereld");</code></li>
+    <li><code>Math.random();</code></li>
+    <li><code>window.confirm("Weet u het zeker?");</code></li>
+    <li><code>window.prompt("Wat is je naam?");</code></li>
+    <li><code>window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";</code></li>
+  </ul>
+</div>
+
+<p>JavaScript is net als PHP een <b>interpreted</b> taal, wat wil zeggen dat je code niet eerst gecompileerd hoeft te worden zoals bij Java of C#. Als er ergens een syntax fout zit wordt alle code tot die fout gewoon uitgevoerd. In de Console krijg je te zien wat de fout is als je script niet goed runt.</p>
+
+<h3>Script tag</h3>
+
+<p>Als we JavaScript willen toevoegen aan een webpagina hebben we de <code>&lt;script&gt;</code> tag nodig. Tussen de open en sluit tag zet je vervolgens alle JavaScript neer die je maar wilt.</p>
+
+<code class="pre">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;script&gt;
+      alert("Hallo JavaScript!");
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+<br>
+<p class="easy">Maak een pagina die jouw naam in een alert() dialoogje zet als je de pagina opent</p>
+
+<p>Net zoals CSS kan je JavaScript in een extern bestand plaatsen. Dat doe je dan met het src attribuut van de script tag:</p>
+
+<code>&lt;script src="mijnjavascript.js"&gt;&lt;/script&gt;</code>
+
+<h3>Attributen</h3>
+
+<p>Een andere manier om JavaScript uit te voeren is via speciale eventhandler attributen. Met het <code>onclick</code> kan je bijvoorbeeld code uitvoeren als er op een knopje geklikt wordt:</p>
+
+<code class="livepreview">
+&lt;button onclick="alert('klik!');"&gt;Knopje&lt;/button&gt;
+</code>
+
+<p>Naast onclick zijn er nog <a href="http://www.w3schools.com/jsref/dom_obj_event.asp">vele andere</a> event handlers. Volgende week gaan we zien dat je ook vanuit JavaScript zelf event handlers kan toevoegen aan een pagina. En dat is eigenlijk ook de betere manier om het te doen. Net zoals je CSS liefst zoveel mogelijk in een apart bestand wil stoppen wil je dat met JavaScript ook. Zo behoud je de <b>separation of concerns</b> tussen JavaScript, HTML en CSS.
+
+
+<img src="helloworld.png" alt="Hello World" style="width: 50%; margin: 0 auto; display: block;">
+
+</body>
+</html>

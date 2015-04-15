@@ -160,6 +160,11 @@ p.live_preview {
     margin-bottom: 15px;
 }
 
+iframe.console {
+    border: 1px solid grey;
+    width: 100%;
+}
+
 .pre {
     display: block;
     white-space: pre-wrap;

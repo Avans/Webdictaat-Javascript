@@ -1,7 +1,6 @@
-var consolejs = function (window, element) {
+var ConsoleJS = function (window, element) {
 
 var document = window.document;
-console.log(document, window);
 
 // Add HTML
 $(element).append('<div><form><textarea autofocus id="exec" spellcheck="false" autocapitalize="off" rows="1" autocorrect="off"></textarea></form>'

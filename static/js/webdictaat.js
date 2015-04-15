@@ -1,5 +1,21 @@
 $(function() {
     function livepreview() {
+        // JavaScript
+        $('code.javascript.oneline').each(function(i, code) {
+            code = $(code);
+            var consoleframe = $('<iframe class="console"></iframe>');
+            code.after(consoleframe);
+
+            var iframe = consoleframe.contents();
+            iframe.find('head').append('<link href="static/css/console.css" rel="stylesheet">');
+
+            var c = new ConsoleJS(iframe[0].defaultView, iframe.find('body')[0]);
+            c.run(code.html().trim());
+
+            code.detach();
+        });
+
+        // HTML & CSS
         $('.livepreview').each(function(i, code) {
             code = $(code);
             var css_span = code.find('.css');
