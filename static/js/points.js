@@ -2,7 +2,7 @@
 var Points = {
     // Cached version of points
     points: 0,
-    base_url: 'http://pointypony.herokuapp.com',
+    base_url: 'https://pointypony.herokuapp.com',
 
     init: function() {
         // Show temporarily cached points
