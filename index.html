@@ -20,7 +20,9 @@
     <script src="static/js/webdictaat.js"></script>
 
     <script src="static/js/prettify.packed.js"></script>
-    <script src="static/js/console.js"></script>'
+    <script src="static/js/console.js"></script>
+    <script src="static/js/points.js"></script>
+    <script src="static/js/live_assignments.js"></script>
 
   </head>
 
@@ -35,7 +37,20 @@
             <span class="icon-bar"></span>
           </button>
           <a class="brand" href="index.html">Webdictaat JavaScript</a>
+
+          <ul class="nav pull-right">
+            <li><button class="btn" id="logout">Uitloggen</button></li>
+            <li><button class="btn" id="login">Inloggen</button></li>
+            <li><p id="logged_in_name" class="nav navbar-text">Ingelogd als Paul Wagener</p></li>
+            <li><p id="points" class="nav navbar-text">0 punten</p></li>
+          </ul>
+
+
+
+        </ul>
         </div>
+
+
       </div>
     </div>
 

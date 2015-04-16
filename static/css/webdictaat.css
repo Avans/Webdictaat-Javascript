@@ -13,6 +13,39 @@ p > code, li > code, dt > code, dd > code {
     clear: both;
 }
 
+#points {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkred;
+}
+
+@-webkit-keyframes fadeBig {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale3d(2.0, 2.0, 2.0);
+  }
+}
+
+.plus-animation {
+    position: absolute;
+    top: 30px;
+    font-size: 40px;
+    color: green;
+    font-weight: bold;
+
+    /* Animation */
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-name: fadeBig;
+    animation-name: fadeBig;
+    -webkit-animation-fill-mode: forwards;
+}
+
 .ace_hidden-cursors {
     opacity:0;
 }

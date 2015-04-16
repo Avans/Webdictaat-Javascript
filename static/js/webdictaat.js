@@ -1,3 +1,16 @@
+var get_editor = function(element) {
+    var editor = ace.edit(element);
+    editor.setTheme("ace/theme/chrome");
+    editor.setHighlightActiveLine(false);
+    editor.setShowFoldWidgets(false);
+    editor.setShowPrintMargin(false);
+    editor.session.setUseWrapMode(true);
+    editor.renderer.setShowGutter(false);
+    editor.renderer.setScrollMargin(8, 8, 0, 0);
+    editor.renderer.setPadding(10);
+    return editor;
+};
+
 $(function() {
     function livepreview() {
         // JavaScript
@@ -39,19 +52,6 @@ $(function() {
 
             var editors = $('<div class="editors"></div>');
             code.after(editors);
-
-            var get_editor = function(element) {
-                var editor = ace.edit(element);
-                editor.setTheme("ace/theme/chrome");
-                editor.setHighlightActiveLine(false);
-                editor.setShowFoldWidgets(false);
-                editor.setShowPrintMargin(false);
-                editor.session.setUseWrapMode(true);
-                editor.renderer.setShowGutter(false);
-                editor.renderer.setScrollMargin(8, 8, 0, 0);
-                editor.renderer.setPadding(10);
-                return editor;
-            };
 
             //Make a copy of the code element as an editor
             if(has_css) {
@@ -159,6 +159,7 @@ $(function() {
                     window.location = url;
                 }
                 livepreview();
+                live_assignments();
 
                 // Prepend the directory name to all links in the content
                 function prependBase(index, value) {
@@ -206,6 +207,9 @@ $(function() {
         .delegate('a', 'click', function() {
             return this.doclick;
         });
+
+    // Login in to the points system
+    Points.check_hash();
 
     navigate(window.location.hash.replace('#/', ''))
 
