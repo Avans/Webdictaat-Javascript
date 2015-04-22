@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Webdictaat Javascript</title>
@@ -16,6 +16,8 @@
 
     <script src="static/js/jquery-1.9.1.js"></script>
     <script src="static/js/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
     <script src="static/ace/ace.js"></script>
     <script src="static/js/webdictaat.js"></script>
 
@@ -23,6 +25,9 @@
     <script src="static/js/console.js"></script>
     <script src="static/js/points.js"></script>
     <script src="static/js/live_assignments.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/app.js"></script>
 
   </head>
 
@@ -36,7 +41,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="index.html">Webdictaat JavaScript</a>
+          <a class="brand no_ajax" href="../index.html">Webdictaat JavaScript</a>
 
           <ul class="nav pull-right">
             <li><button class="btn" id="logout">Uitloggen</button></li>
@@ -72,7 +77,41 @@
         </div><!--/span-->
         <button id="test">Check opgave</button>
         <article class="span9" id="content">
-            Welkom in het webdictaat. Kies iets in het menu
+
+          <div id="leaderboards" ng-controller="LeaderboardController">
+              
+              <div ng-hide="isLoggedIn">
+                <h2>Welkom</h2>
+
+                <p>Login voor meer informatie. </p>
+                <button class="btn login">Inloggen</button>
+              </div>
+              <div ng-show="isLoggedIn">
+                <h2>Welkom {{username}}</h2>
+                <p>You currently have {{points}} Avanspoints</p>
+
+                <table class="leaderBoard table">
+                  <thead>
+                    <tr>
+                      <th>#</th><th>Username</th><th>Points</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="user in leaderboard.users">
+                      <td>{{$index + 1}}</td>
+                      <td>{{user.email}}</td>
+                      <td>{{user.points}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+
+
+          </div> <!-- End of Leaderboard controller -->
+
+          
+      
         </article><!--/span-->
       </div><!--/row-->
 
