@@ -296,3 +296,22 @@ figcaption {
 
      border-top-width: 0;
  }
+
+ /** Leaderboard **/
+
+.leaderBoard tbody > tr:first-child{
+    background-color: gold;
+    font-size:140%;
+    font-weight: bold;
+}
+
+.leaderBoard tbody > tr:nth-child(2){
+    background-color: silver;
+    font-weight: bold;
+}
+.leaderBoard tbody > tr:nth-child(3){
+    background-color: #CD7F32;
+    font-weight: bold;
+}
+
+ /** End leaderboard **/}
