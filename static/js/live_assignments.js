@@ -41,7 +41,7 @@ var assignments = {
     small_array: {
         id: "jk34bjk34",
         title: "Kleine array",
-        description: "Definieer een variabele 'sites' die een <b>array</b> met twee waardes bevat: \"http://en.wikipedia.org/\" en \"http://reddit.com/\"",
+        description: "Definieer een variabele 'sites' die een array met twee waardes bevat: \"http://en.wikipedia.org/\" en \"http://reddit.com/\"",
         points: 5,
         return: "typeof sites === 'undefined' ? undefined : sites",
         tester: function(sites) {
@@ -65,7 +65,7 @@ var assignments = {
         }
     },
     addition: {
-        id: "additionhashed",
+        id: "5539159744761a2400e62edb",
         title: "Optellen",
         description: "Maak een functie met de naam 'optellen' die de som van zijn twee parameters teruggeeft. Voorbeeld: optellen(1, 2) returned 3.",
         points: 10,
@@ -77,7 +77,7 @@ var assignments = {
         }
     },
     increasePoints: {
-        id: "increasePoints123",
+        id: "553915c844761a2400e62edc",
         title: "HTML veranderen",
         description: "Verander de inhoud van de &lt;div&gt; met JavaScript naar \"Punten: 1\"",
         points: 5,

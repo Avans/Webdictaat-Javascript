@@ -159,7 +159,6 @@ $(function() {
                     window.location = url;
                 }
                 livepreview();
-                live_assignments();
 
                 // Prepend the directory name to all links in the content
                 function prependBase(index, value) {
@@ -167,6 +166,12 @@ $(function() {
                 };
                 $('#content img').attr('src', prependBase);
                 $('#content a:not([href*="://"],[href^="mailto:"],[href^="#"])').attr('href', prependBase);
+
+                // Release the Angular!
+                angular.element(document).injector().invoke(function($compile, $rootScope){
+                    $compile($('#content').contents())($rootScope);
+                });
+
             });
             $('html, body').scrollTop(0);
 
@@ -209,7 +214,12 @@ $(function() {
         });
 
     // Login in to the points system
-    Points.check_hash();
+    if(window.location.hash.startsWith('#token=')) {
+        var token = window.location.hash.replace('#token=', '');
+        window.localStorage['token'] = token;
+        window.location.hash = '';
+        window.location.reload();
+    }
 
     console.log(window.location.hash);
     navigate(window.location.hash.replace('#/', ''))
