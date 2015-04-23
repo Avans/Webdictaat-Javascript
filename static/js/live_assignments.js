@@ -5,8 +5,23 @@ var assert = {
         }
 
     },
+    isDefined: function(value, error) {
+        if(typeof value === 'undefined') {
+            throw error;
+        }
+    },
     isTruthy: function(value, error) {
         if(!value) {
+            throw error;
+        }
+    },
+    isArray: function(value, error) {
+        if(value.constructor.name !== 'Array') {
+            throw error;
+        }
+    },
+    isNumber: function(value, error) {
+        if(typeof value !== 'number') {
             throw error;
         }
     },
@@ -23,6 +38,32 @@ var assert = {
 };
 
 var assignments = {
+    small_array: {
+        id: "jk34bjk34",
+        title: "Kleine array",
+        description: "Definieer een variabele 'sites' die een <b>array</b> met twee waardes bevat: \"http://en.wikipedia.org/\" en \"http://reddit.com/\"",
+        points: 5,
+        return: "typeof sites === 'undefined' ? undefined : sites",
+        tester: function(sites) {
+            assert.isDefined(sites, "Je hebt geen variabele 'sites' gedefinieerd");
+            assert.isArray(sites, "Variabele is geen array");
+            assert.isEqual(sites.length, 2, "Er moeten 2 waardes in de array zitten");
+            assert.isEqual(sites[0], "http://en.wikipedia.org/", "De eerste waarde moet \"http://en.wikipedia.org/\" zijn");
+            assert.isEqual(sites[1], "http://reddit.com/", "De tweede waarde moet \"http://reddit.com/\" zijn");
+        }
+    },
+    unixtime: {
+        id: "jk34bjk3afasdf4",
+        title: "Got the time?",
+        description: "Definieer een functie tijd() die de tijd in seconde sinds 1 jan. 1970 teruggeeft (de zogenaamde <a href=\"http://www.unixtimestamp.com/\">Unix Timestamp</a>",
+        points: 5,
+        return: "typeof tijd === 'undefined' ? undefined : tijd",
+        tester: function(tijd) {
+            assert.isFunction(tijd, "Je hebt geen functie 'tijd' gedefinieerd");
+            assert.isNumber(tijd(), "Je functie geeft geen number waarde terug");
+            assert.isEqual(tijd(), new Date().getTime(), "Je functie geeft niet de huidige tijd terug (is nu " + new Date().getTime() + ")");
+        }
+    },
     addition: {
         id: "additionhashed",
         title: "Optellen",
@@ -57,6 +98,7 @@ function live_assignments() {
 
         var template = $('<div>'
             + '<span class="points">10 punten</span>'
+            + '<h4 class="title"></h4>'
             + '<div class="description"></div>'
             + '<code class="editor html"></code>'
             + '<code class="editor js"></code>'
@@ -66,6 +108,7 @@ function live_assignments() {
             + '<div class="alert alert-info complete">Challenge complete!</div>'
             + '</div>');
 
+        template.find('.title').html("Challenge: " + assignment.title);
         template.find('.description').html(assignment.description);
 
         if(assignment.html) {

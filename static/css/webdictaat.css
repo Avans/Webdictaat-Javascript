@@ -41,6 +41,12 @@ p > code, li > code, dt > code, dd > code {
   font-weight: bold;
 }
 
+.live_assignment .title {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
 .live_assignment .description {
   text-align: center;
   padding: 3px;
