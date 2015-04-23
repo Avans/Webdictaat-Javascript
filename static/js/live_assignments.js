@@ -36,6 +36,8 @@ var assert = {
         }
     }
 };
+// NIET SPIEKEN!
+// ANTWOORDEN WORDEN IN DE TOEKOMST OOK OP DE SERVER GECHECKT!
 
 var assignments = {
     small_array: {
@@ -88,5 +90,17 @@ var assignments = {
             assert.isNotEqual(document.querySelector('.punten').innerHTML, "Punten: 0", "Je hebt niet de inhoud van de div gewijzigd");
             assert.isEqual(document.querySelector('.punten').innerHTML, "Punten: 1", "Inhoud van div wordt niet 'Punten: 1'");
         }
-    }
+    },
+    reverse: {
+        id: "553966a860123324009cdd15",
+        title: "Omgedraaid",
+        description: "Maak een functie 'omgedraaid' die een een string omgekeerd teruggeeft. omgedraaid('Hoi') retourneerd bijvoorbeeld 'ioH'.",
+        points: 10,
+        return: "typeof omgedraaid === 'undefined' ? undefined : omgedraaid",
+        tester: function(omgedraaid) {
+            assert.isFunction(omgedraaid, "Je hebt geen functie 'omgedraaid' gemaakt");
+            assert.isEqual(omgedraaid('Hoi'), 'ioH', "omgedraaid('Hoi') moet 'ioH' teruggeven");
+            assert.isEqual(omgedraaid('123456'), '654321', "Je functie werkt niet op alle strings");
+        }
+     }
 }
