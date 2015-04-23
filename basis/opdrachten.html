@@ -27,11 +27,12 @@
     <img src="uitwerking-alert-button.png" class="screenshot" alt="Uitwerking">
     <h2>Hello World 2</h2>
 
-    <p>Ok, ok, dat was te makkelijk. We gaan het iets moeilijker maken: Maak een knopje die 'Hello World' zegt als je er op klikt.</p>
+    <p>Ok, ok. dat was te makkelijk. We gaan het iets moeilijker maken: Maak een knopje die 'Hello World' zegt als je er op klikt.</p>
 
-    <p><b>Zorg ervoor dat er geen JavaScript in je HTML staat. Dus los het niet op met</b> <code>&lt;button onclick="alert('Hello World');"&gt;</code>. <b>Dit geldt voor alle opdrachten in dit vak.</b></p>
-
+    <p><b>Zorg ervoor dat er geen JavaScript in je HTML staat. Dus los het niet op met</b> <code>&lt;button onclick="alert('Hello World');"&gt;</code>. <b>Dit geldt ook voor alle volgende opdrachten in dit vak.</b></p>
   </div>
+
+  <div data-assignment="small_array" class="live_assignment"></div>
 
   <div class="assignment easy">
     <img src="uitwerking-random.png" class="screenshot" alt="Uitwerking">
@@ -42,18 +43,26 @@
     <p>Hint: Met het <a href="http://www.w3schools.com/jsref/obj_location.asp" target="_blank">window.location</a> object kan je navigeren naar een andere pagina</p>
   </div>
 
+  <div data-assignment="addition" class="live_assignment"></div>
+
   <div class="assignment medium">
     <img src="uitwerking-zipcode.png" class="screenshot" alt="Uitwerking">
     <h2>Postcode check</h2>
 
-    <p>Maak een formulier met een postcode veld. Zorg ervoor dat als het formulier verstuurd wordt er een melding komt als de postcode niet goed is. Jouw JavaScript moet dan voorkomen dat het formulier echt verstuurd wordt.</p>
+    <p>Maak een formulier met een postcode veld. Zorg ervoor dat als het formulier <a href="http://www.w3schools.com/jsref/event_onsubmit.asp" target="_blank">verstuurd</a> wordt er een melding komt als de postcode niet goed is. Jouw JavaScript moet dan voorkomen dat het formulier echt verstuurd wordt. Je mag kiezen uit twee varianten:</p>
+
+    <p><b>Simpel:</b> Controleer of de ingevulde string van het tekstveld precies 6 niet-spatie karakters bevat.</p>
+
+    <p><b>Uitdaging:</b> Controleer of de string begint met 4 cijfers, gevolgd door misschien een spatie, gevolgd door twee letters.</p>
   </div>
+
+  <div data-assignment="unixtime" class="live_assignment"></div>
 
   <div class="assignment medium">
     <img src="uitwerking-countdown.png" class="screenshot" alt="Uitwerking">
     <h2>Countdown</h2>
 
-    <p>Tot zover de opdrachten die binnen vijf minuten te maken zijn. De volgende opdracht is om een klok te maken die automatisch aftelt tot bijvoorbeeld jouw volgende verjaardag. Zorg ervoor dat elke seconde de klok verandert.
+    <p>De volgende opdracht is om een klok te maken die automatisch aftelt tot bijvoorbeeld jouw volgende verjaardag. Zorg ervoor dat elke seconde automatisch de klok veranderd.
 
     <p><b>Hint:</b> Voor deze opdracht heb je <a href="http://www.w3schools.com/jsref/met_win_setinterval.asp" target="_blank">window.setInterval()</a> en <a href="http://www.w3schools.com/jsref/jsref_obj_date.asp" target="_blank">Date</a> nodig.
 
@@ -65,11 +74,30 @@
     <img src="uitwerking-game.png" class="screenshot" alt="Uitwerking">
     <h2>Game</h2>
 
-    <p>Tot zover de opdrachten die binnen een minuut te maken zijn. We
+    <p>Tijd voor spelletjes! Heb je bovenstaande allemaal af? Dan kan je je tanden vastbijten in het maken van onze awesome top-down shooter game!</p>
+
+    <p>Maak een spelletje waarbij je de main character kan laten lopen met de pijltjes toetsen op een speelveld. Ideeën nodig? Breid je spelletje dan eens uit met:
+      <ul>
+        <li>Gouden muntjes die de player kan pakken</li>
+        <li>Punten die kunnen worden verdiend</li>
+        <li>Een enemy die de player achtervolgd</li>
+        <li>Nieuwe levels als de player 10 punten heeft met snellere enemies</li>
+      </ul>
+    </p>
 
     <p><b>Hint:</b> De sprites zijn in onze uitwerking simpele &lt;img&gt; tags. Door ze met CSS een absolute positie te geven kan je ze in JavaScript verplaatsen met de <a href="http://www.w3schools.com/jsref/prop_style_top.asp" target="_blank">top</a> en <a href="http://www.w3schools.com/jsref/prop_style_left.asp" target="_blank">left</a> attributen.</p>
 
     <p><b>Hint:</b> Met de <a href="http://www.w3schools.com/jsref/event_onkeydown.asp" target="_blank">window.onkeydown</a> event kan je de pijltjestoetsen afvangen. Welke toets is ingedrukt vind je in het Event object als <a href="http://www.w3schools.com/jsref/event_key_keycode.asp" target="_blank">keyCode</a> property</p>
+
+    <p>Sprites nodig? Gebruik deze:
+        <a href="game_up.png" target="_blank">up</a>,
+        <a href="game_down.png" target="_blank">down</a>,
+        <a href="game_down.png" target="_blank">left</a>,
+        <a href="game_down.png" target="_blank">right</a>,
+        <a href="game_gold.png" target="_blank">gold</a>,
+        <a href="game_map.png" target="_blank">map</a>,
+        <a href="game_logo.png" target="_blank">logo</a>
+      </p>
   </div>
 
   </body>

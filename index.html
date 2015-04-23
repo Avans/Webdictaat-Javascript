@@ -27,8 +27,6 @@
     <script src="static/js/live_assignments.js"></script>
 
     <script src="app/app.js"></script>
-    <script src="app/app.js"></script>
-
   </head>
 
   <body>
@@ -43,14 +41,17 @@
           </button>
           <a class="brand no_ajax" href="../index.html">Webdictaat JavaScript</a>
 
-          <ul class="nav pull-right">
-            <li><button class="btn" id="logout">Uitloggen</button></li>
-            <li><button class="btn" id="login">Inloggen</button></li>
-            <li><p id="logged_in_name" class="nav navbar-text">Ingelogd als Paul Wagener</p></li>
-            <li><p id="points" class="nav navbar-text">0 punten</p></li>
-          </ul>
+          <div  ng-controller="UserController">
+            <ul class="nav pull-right" ng-show="user.isLoggedIn">
+              <li><button class="btn" id="logout" ng-click="logout()">Uitloggen</button></li>
+              <li><p id="logged_in_name" class="nav navbar-text">Ingelogd als {{user.username}}</p></li>
+              <li><p id="points" class="nav navbar-text">{{user.points}} punten</p></li>
+            </ul>
 
-
+            <ul class="nav pull-right" ng-hide="user.isLoggedIn">
+              <li><button class="btn" id="login" ng-click="login()">Inloggen</button></li>
+            </ul>
+          </div>
 
         </ul>
         </div>
@@ -73,6 +74,13 @@
                     <li><a href="">Functions</a></li>
                     </ol>
               </li>
+            </ul>
+
+            <ul class="nav nav-list" id="assignments">
+              <li class="nav-header">Opdrachten</li>
+              <li><a href="basis/opdrachten.html">Opdrachten week 1</a></li>
+            </ul>
+
           </div><!--/.well -->
         </div><!--/span-->
         <article class="span9" id="content">
@@ -82,16 +90,16 @@
      
 
           <div id="leaderboards" ng-controller="LeaderboardController">
-              
-              <div ng-hide="isLoggedIn">
+
+              <div ng-hide="user.isLoggedIn">
                 <h2>Welkom</h2>
 
                 <p>Login voor meer informatie. </p>
-                <button class="btn login">Inloggen</button>
+                <button class="btn login" ng-click="login()">Inloggen</button>
               </div>
-              <div ng-show="isLoggedIn">
-                <h2>Welkom {{username}}</h2>
-                <p>You currently have {{points}} Avanspoints</p>
+              <div ng-show="user.isLoggedIn">
+                <h2>Welkom {{user.username}}</h2>
+                <p>You currently have {{user.points}} Avanspoints</p>
 
                 <table class="leaderBoard table">
                   <thead>
@@ -113,8 +121,8 @@
 
           </div> <!-- End of Leaderboard controller -->
 
-          
-      
+
+
         </article><!--/span-->
       </div><!--/row-->
 

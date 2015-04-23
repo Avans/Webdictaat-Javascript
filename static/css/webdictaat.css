@@ -19,6 +19,73 @@ p > code, li > code, dt > code, dd > code {
     color: darkred;
 }
 
+/* JS assignments stuff */
+.live_assignment {
+  border-radius: 4px;
+  padding: 10px;
+  margin: 30px auto;
+
+  background-color: rgb(245, 245, 245);
+  webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  width: 70%;
+  clear: both;
+}
+
+.live_assignment.completed {
+  background-color: #DAF7E2;
+}
+
+.live_assignment .points {
+  float: right;
+  font-weight: bold;
+}
+
+.live_assignment .title {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.live_assignment .description {
+  text-align: center;
+  padding: 3px;
+  margin: 4px;
+  margin-top: 0;
+  font-style: italic;
+}
+
+.live_assignment .editor {
+  width: 100% !important;
+  border-radius: 5px;
+  float: none !important;
+  display: block;
+  margin: 10px auto;
+  background-color: white !important;
+}
+
+.live_assignment .alert {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  display: none;
+}
+
+.live_assignment .run {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+
+  background-color: #29AD86;
+  height: 30px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: white;
+  border-width: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 @-webkit-keyframes fadeBig {
   0% {
     opacity: 1;
@@ -167,6 +234,12 @@ code.livepreview select, input {
     clear: left;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+}
+
+.js {
+    background-image: url(../img/js.png);
+    background-repeat: no-repeat;
+    background-position: right top;
 }
 
 .css + .html {

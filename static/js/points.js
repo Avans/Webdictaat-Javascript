@@ -36,7 +36,7 @@ var Points = {
     },
 
     is_logged_in: function() {
-        return window.localStorage['token'] != undefined;
+        return window.localStorage['token'] !== undefined;
     },
 
     set_points: function(points) {
@@ -90,7 +90,6 @@ var Points = {
 
             if(window.localStorage['redirect_back_hash']) {
                 window.location.hash = window.localStorage['redirect_back_hash'];
-                window.localStorage['redirect_back_hash'] = undefined;
             } else {
                 window.location.hash = '/';
             }
@@ -99,9 +98,10 @@ var Points = {
             $('#logout').show();
             $('#login').hide();
         }
+        window.localStorage.removeItem(['redirect_back_hash']);
     }
 };
 
 $(function() {
-    Points.init();
+    //Points.init();
 });

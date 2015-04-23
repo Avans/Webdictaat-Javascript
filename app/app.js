@@ -1,14 +1,12 @@
 var app = angular.module("myApp", []);
 
-app.factory('PointFactory', function($http){
-	
-	var pointFactory = {};
+BASE_URL = 'https://pointypony.herokuapp.com';
 
-	pointFactory.getPoints = function(options){
+app.factory('UserFactory', function($http){
+	var userFactory = {};
 
-		console.log(window.localStorage['token']);
-
-		$http.get('https://pointypony.herokuapp.com/Points?token=' + window.localStorage['token'])
+	userFactory.fetchInfo = function(options){
+		$http.get(BASE_URL + '/Points?token=' + window.localStorage['token'])
 			.success(function(data, status, headers, config){
 				if(data)
 					options.success(data);
@@ -17,8 +15,24 @@ app.factory('PointFactory', function($http){
 			});
 	};
 
-	return pointFactory;
+	userFactory.user = {
+		isLoggedIn: false,
+		username: 'Paul',
+		points: 5
+	};
+
+	userFactory.login = function() {
+		window.location.assign(BASE_URL + '/auth/avans');
+	};
+
+	userFactory.logout = function() {
+		window.localStorage.removeItem('token');
+		userFactory.user.isLoggedIn = false;
+	};
+
+	return userFactory;
 });
+
 
 app.directive('myDailyQuest', function() {
   return {
@@ -44,27 +58,40 @@ app.directive('myDailyQuest', function() {
   };
 });
 
+app.controller("UserController", ["$scope", "$http", "UserFactory", function($scope, $http, UserFactory){
+	$scope.user = UserFactory.user;
 
-app.controller("LeaderboardController", ["$scope", "$http", "PointFactory", function($scope, $http, PointFactory){
+	$scope.login = function() {
+		UserFactory.login();
+	};
 
-	$scope.isLoggedIn = false;
-	$scope.username = "";
-	$scope.points = "";
-	$scope.leaderboard = [];
+	$scope.logout = function() {
+		UserFactory.logout();
+	};
 
-	PointFactory.getPoints({
-		success: function(points){
-			$scope.username = points.username;
-			$scope.points = points.points;
-			$scope.isLoggedIn = true;
+	UserFactory.fetchInfo({
+		success: function(userInfo) {
+			if(userInfo.username) {
+				$scope.user.isLoggedIn = true;
+				$scope.user.username = userInfo.username;
+				$scope.user.points = userInfo.points;
+			}
 		}
 	});
 
+}]);
 
+app.controller("LeaderboardController", ["$scope", "$http", "UserFactory", function($scope, $http, UserFactory){
+	$scope.leaderboard = [];
+	$scope.user = UserFactory.user;
 
-	$http.get('https://pointypony.herokuapp.com/Leaderboards?token=' + window.localStorage['token'])
+	$scope.login = function() {
+		UserFactory.login();
+	};
+
+	$http.get(BASE_URL + '/Leaderboards?token=' + window.localStorage['token'])
 		.success(function(data, status){
-			$scope.leaderboard = data;
 			console.log(data);
+			$scope.leaderboard = data;
 	});
 }]);
