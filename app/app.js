@@ -1,6 +1,6 @@
 var app = angular.module("myApp", []);
 
-BASE_URL = 'https://pointypony.herokuapp.com';
+BASE_URL = 'http://localhost:3000';
 
 app.factory('UserFactory', function($http){
 	var userFactory = {};
