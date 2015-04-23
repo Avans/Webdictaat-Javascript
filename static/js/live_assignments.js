@@ -108,7 +108,7 @@ function live_assignments() {
 
                     // No error, complete the assignment!
                     Points.complete_assignment(assignment.id);
-                    Points.add_points(assignments.points);
+                    Points.add_points(assignment.points);
 
                     $(outer_div).addClass("completed");
                     template.find('.complete')
