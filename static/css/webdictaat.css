@@ -314,4 +314,18 @@ figcaption {
     font-weight: bold;
 }
 
- /** End leaderboard **/}
+ /** End leaderboard **/
+
+ /** Daily Quests **/
+
+.dailyQuest ul.answers{
+  width:50px;
+}
+
+.dailyQuest ul.answers > li{
+  list-style-type: none;
+  padding:3px 6px;
+  border:1px solid black;
+}
+
+ /** End of daily quests **/
