@@ -1,0 +1,11 @@
+<div class="live_assignment">
+    <span class="points">{{a.points}} punten</span>
+    <h4 class="title">Challenge: {{a.title}}</h4>
+    <div class="description">{{a.description}}</div>
+
+    <code class="editor html" ng-show="a.html">{{a.html}}</code>
+    <code class="editor js"></code>
+    <button class="run" ng-click="run()">Run!</button>
+    <div class="alert alert-error error">Error!</div>
+    <div class="alert alert-info complete">Challenge complete!</div>
+</div>
