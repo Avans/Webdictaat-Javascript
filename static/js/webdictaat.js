@@ -221,7 +221,6 @@ $(function() {
         window.location.reload();
     }
 
-    console.log(window.location.hash);
     navigate(window.location.hash.replace('#/', ''))
 
     $(window).on('hashchange', function(e) {
