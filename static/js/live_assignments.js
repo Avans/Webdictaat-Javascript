@@ -80,7 +80,7 @@ var assignments = {
         }
     },
     increase_points: {
-        id: "553915c844761a2400e62edc",
+        id: "5539286f60123324009cdd14",
         title: "HTML veranderen",
         description: "Verander de inhoud van de div met JavaScript naar \"Punten: 1\"",
         points: 10,
