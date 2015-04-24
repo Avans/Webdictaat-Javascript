@@ -61,9 +61,10 @@ var assignments = {
         points: 10,
         return: "typeof tijd === 'undefined' ? undefined : tijd",
         tester: function(tijd) {
+            var time = Math.floor(new Date().getTime() / 1000);
             assert.isFunction(tijd, "Je hebt geen functie 'tijd' gedefinieerd");
             assert.isNumber(tijd(), "Je functie geeft geen number waarde terug");
-            assert.isEqual(tijd(), new Date().getTime(), "Je functie geeft niet de huidige tijd terug (is nu " + new Date().getTime() + ")");
+            assert.isEqual(tijd(), time, "Je functie geeft niet de huidige tijd terug (is nu " + time + ")");
         }
     },
     addition: {
