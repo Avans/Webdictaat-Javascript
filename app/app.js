@@ -215,3 +215,16 @@ app.controller("LeaderboardController", ["$scope", "$http", "UserFactory", funct
 			$scope.leaderboard = data;
 	});
 }]);
+
+var get_editor = function(element) {
+    var editor = ace.edit(element);
+    editor.setTheme("ace/theme/chrome");
+    editor.setHighlightActiveLine(false);
+    editor.setShowFoldWidgets(false);
+    editor.setShowPrintMargin(false);
+    editor.session.setUseWrapMode(true);
+    editor.renderer.setShowGutter(false);
+    editor.renderer.setScrollMargin(8, 8, 0, 0);
+    editor.renderer.setPadding(10);
+    return editor;
+};
