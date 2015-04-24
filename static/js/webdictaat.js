@@ -207,19 +207,21 @@ $(function() {
         }
     };
 
+    // Login in to the points system
+    if(window.location.hash && window.location.hash.startsWith('#token=')) {
+        var token = window.location.hash.replace('#token=', '');
+        window.localStorage['token'] = token;
+        window.location.hash = '';
+        window.location.reload();
+    }
+
     /*$('body')
         .delegate('a', 'mouseup', linkmouseup)
         .delegate('a', 'click', function() {
             return this.doclick;
         });
 
-    // Login in to the points system
-    if(window.location.hash.startsWith('#token=')) {
-        var token = window.location.hash.replace('#token=', '');
-        window.localStorage['token'] = token;
-        window.location.hash = '';
-        window.location.reload();
-    }
+
 
     navigate(window.location.hash.replace('#/', ''))
 
