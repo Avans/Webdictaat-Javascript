@@ -1,8 +1,44 @@
-var app = angular.module("myApp", []);
+var app = angular.module("myApp", ["ui.router"]);
 
 BASE_URL = 'https://pointypony.herokuapp.com';
 
 //Comentaar toevoegen
+
+app.config(function($stateProvider, $httpProvider) {
+
+    $stateProvider
+    .state('home', {
+        url: '/',
+        templateUrl: 'home.html'
+    })
+    .state('page', {
+        url: '/{url:.+}',
+        template: '<div ng-include="url" updatelinks></div>',
+        controller: function($scope, $stateParams) {
+            $scope.url = $stateParams.url;
+        }
+    });
+});
+
+app.directive('updatelinks', function($compile) {
+    return {
+        link: function(scope, element) {
+            var links = element.find('a').each(function(a) {
+                $(this).attr('href', '#/'+$(this).attr('href'));
+            });
+
+            if(scope.url) {
+                var dirname = scope.url.substring(0, scope.url.lastIndexOf('/'));
+
+                element.find('img').each(function() {
+                   $(this).attr('src', dirname + '/' + $(this).attr('src'));
+                });
+            }
+
+        }
+    };
+});
+
 
 app.factory('UserFactory', function($http){
 	var userFactory = {};

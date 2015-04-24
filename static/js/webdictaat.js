@@ -207,7 +207,7 @@ $(function() {
         }
     };
 
-    $('body')
+    /*$('body')
         .delegate('a', 'mouseup', linkmouseup)
         .delegate('a', 'click', function() {
             return this.doclick;
@@ -225,9 +225,9 @@ $(function() {
 
     $(window).on('hashchange', function(e) {
         navigate(window.location.hash.substring(2))
-    });
+    });*/
 
     // Add little down arrows to menus with submenus
-    $('.nav li:has(ol)').children('a').append('<i class="icon-chevron-down pull-right"></i>');
+    //$('.nav li:has(ol)').children('a').append('<i class="icon-chevron-down pull-right"></i>');
 
 });
