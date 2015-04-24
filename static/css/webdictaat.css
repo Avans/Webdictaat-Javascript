@@ -19,6 +19,12 @@ p > code, li > code, dt > code, dd > code {
     color: darkred;
 }
 
+.twitter {
+  border-width: 0;
+  width: 50%;
+  height: 800px;
+}
+
 /* JS assignments stuff */
 .live_assignment {
   border-radius: 4px;
