@@ -11,6 +11,14 @@ app.config(function($stateProvider, $httpProvider) {
         url: '/',
         templateUrl: 'home.html'
     })
+    .state('token', {
+        url: '/token={token:.+}',
+        controller: function($state, $stateParams, UserFactory) {
+            window.localStorage['token'] = $stateParams.token;
+            $state.go('home');
+            UserFactory.fetchInfo();
+        }
+    })
     .state('page', {
         url: '/{url:.+}',
         template: '<div ng-include="url" updatelinks></div>',
@@ -43,14 +51,15 @@ app.directive('updatelinks', function($compile) {
 app.factory('UserFactory', function($http){
 	var userFactory = {};
 
-	userFactory.fetchInfo = function(options){
+	userFactory.fetchInfo = function(){
 		$http.get(BASE_URL + '/Points?token=' + window.localStorage['token'])
-			.success(function(data, status, headers, config){
-				if(data)
-					options.success(data);
-				else
-					options.error(status);
-			});
+    		.success(function(data, status, headers, config){
+    			if(data.username) {
+                    userFactory.user.isLoggedIn = true;
+                    userFactory.user.username = data.username;
+                    userFactory.user.points = data.points;
+                }
+            });
 	};
 
 	userFactory.user = {
@@ -189,15 +198,7 @@ app.controller("UserController", ["$scope", "$http", "UserFactory", function($sc
 		UserFactory.logout();
 	};
 
-	UserFactory.fetchInfo({
-		success: function(userInfo) {
-			if(userInfo.username) {
-				$scope.user.isLoggedIn = true;
-				$scope.user.username = userInfo.username;
-				$scope.user.points = userInfo.points;
-			}
-		}
-	});
+	UserFactory.fetchInfo();
 
 }]);
 
