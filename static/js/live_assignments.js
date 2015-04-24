@@ -36,13 +36,15 @@ var assert = {
         }
     }
 };
+// NIET SPIEKEN!
+// ANTWOORDEN WORDEN IN DE TOEKOMST OOK OP DE SERVER GECHECKT!
 
 var assignments = {
     small_array: {
-        id: "jk34bjk34",
+        id: "5539279b60123324009cdd13",
         title: "Kleine array",
         description: "Definieer een variabele 'sites' die een array met twee waardes bevat: \"http://en.wikipedia.org/\" en \"http://reddit.com/\"",
-        points: 5,
+        points: 10,
         return: "typeof sites === 'undefined' ? undefined : sites",
         tester: function(sites) {
             assert.isDefined(sites, "Je hebt geen variabele 'sites' gedefinieerd");
@@ -53,10 +55,10 @@ var assignments = {
         }
     },
     unixtime: {
-        id: "jk34bjk3afasdf4",
+        id: "553915c844761a2400e62edc",
         title: "Got the time?",
-        description: "Definieer een functie tijd() die de tijd in seconde sinds 1 jan. 1970 teruggeeft (de zogenaamde <a href=\"http://www.unixtimestamp.com/\">Unix Timestamp</a>",
-        points: 5,
+        description: "Definieer een functie tijd() die de tijd in seconde sinds 1 jan. 1970 teruggeeft (de zogenaamde Unix Timestamp http://www.unixtimestamp.com/ )",
+        points: 10,
         return: "typeof tijd === 'undefined' ? undefined : tijd",
         tester: function(tijd) {
             assert.isFunction(tijd, "Je hebt geen functie 'tijd' gedefinieerd");
@@ -65,7 +67,7 @@ var assignments = {
         }
     },
     addition: {
-        id: "5539159744761a2400e62edb",
+        id: "55392649f0466f2400c179f4",
         title: "Optellen",
         description: "Maak een functie met de naam 'optellen' die de som van zijn twee parameters teruggeeft. Voorbeeld: optellen(1, 2) returned 3.",
         points: 10,
@@ -76,11 +78,11 @@ var assignments = {
             assert.isEqual(optellen(3, 4), 7, "optellen(3, 4) moet 7 teruggeven");
         }
     },
-    increasePoints: {
+    increase_points: {
         id: "553915c844761a2400e62edc",
         title: "HTML veranderen",
-        description: "Verander de inhoud van de &lt;div&gt; met JavaScript naar \"Punten: 1\"",
-        points: 5,
+        description: "Verander de inhoud van de div met JavaScript naar \"Punten: 1\"",
+        points: 10,
         html: '<div class="punten">Punten: 0</div>',
         return: "document",
         tester: function(document) {
@@ -88,91 +90,17 @@ var assignments = {
             assert.isNotEqual(document.querySelector('.punten').innerHTML, "Punten: 0", "Je hebt niet de inhoud van de div gewijzigd");
             assert.isEqual(document.querySelector('.punten').innerHTML, "Punten: 1", "Inhoud van div wordt niet 'Punten: 1'");
         }
-    }
-}
-
-function live_assignments() {
-    $('.live_assignment').each(function() {
-        var outer_div = this;
-        var assignment = assignments[$(this).data('assignment')];
-
-        var template = $('<div>'
-            + '<span class="points">10 punten</span>'
-            + '<h4 class="title"></h4>'
-            + '<div class="description"></div>'
-            + '<code class="editor html"></code>'
-            + '<code class="editor js"></code>'
-            + '<div class="result"></div>'
-            + '<button class="run">Run!</button>'
-            + '<div class="alert alert-error error">Error!</div>'
-            + '<div class="alert alert-info complete">Challenge complete!</div>'
-            + '</div>');
-
-        template.find('.title').html("Challenge: " + assignment.title);
-        template.find('.description').html(assignment.description);
-
-        if(assignment.html) {
-            template.find('.editor.html').text(assignment.html);
-        } else {
-            template.find('.editor.html').hide();
+    },
+    reverse: {
+        id: "553966a860123324009cdd15",
+        title: "Omgedraaid",
+        description: "Maak een functie 'omgedraaid' die een een string omgekeerd teruggeeft. omgedraaid('Hoi') retourneerd bijvoorbeeld 'ioH'.",
+        points: 10,
+        return: "typeof omgedraaid === 'undefined' ? undefined : omgedraaid",
+        tester: function(omgedraaid) {
+            assert.isFunction(omgedraaid, "Je hebt geen functie 'omgedraaid' gemaakt");
+            assert.isEqual(omgedraaid('Hoi'), 'ioH', "omgedraaid('Hoi') moet 'ioH' teruggeven");
+            assert.isEqual(omgedraaid('123456'), '654321', "Je functie werkt niet op alle strings");
         }
-
-        // Set source by student
-        template.find('.editor.js').text(window.localStorage['source.' + assignment.id]);
-
-        var js_editor = template.find('.editor.js').height(150);
-        ace_editor = get_editor(js_editor[0]);
-        ace_editor.getSession().setMode("ace/mode/javascript");
-
-        js_editor.append(template.find('.run'));
-
-        // Run button
-        var run_button = template.find('.run')
-            .data('editor', ace_editor)
-            .click(function() {
-                var user_code = $(this).data('editor').getSession().getValue();
-
-                // Save code in browser
-                window.localStorage['source.' + assignment.id] = user_code;
-
-                // Set up an iframe to run code in
-                var iframe = $('<iframe>');
-                $('body').append(iframe);
-                iframe.contents().find('body').append(assignment.html);
-                var frameWindow = iframe[0].contentWindow;
-
-                try {
-                    // Run the code!
-                    frameWindow.eval(user_code);
-
-                    // Test the return value
-                    var returnValue = frameWindow.eval(assignment.return);
-                    assignment.tester(returnValue);
-
-                    // No error, complete the assignment!
-                    Points.complete_assignment(assignment.id);
-                    Points.add_points(assignment.points);
-
-                    $(outer_div).addClass("completed");
-                    template.find('.complete')
-                        .slideDown()
-                        .delay(1000)
-                        .slideUp();
-
-                } catch(e) {
-                    // Show error to user
-                    template.find('.error').html("Error: " + e)
-                        .slideDown()
-                        .delay(3000)
-                        .slideUp();
-                } finally {
-                    iframe.remove();
-                }
-        });
-
-        $(this).append(template);
-
-    });
-
-
+     }
 }

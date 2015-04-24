@@ -31,7 +31,15 @@ app.factory('UserFactory', function($http){
 	};
 
 	userFactory.completeAssignment = function(assignmentId, points) {
-		$http.post(BASE_URL + '/Points?token=' + window.localStorage['token'], {assignmentId: assignmentId});
+		$http.post(BASE_URL + '/Points?token=' + window.localStorage['token'],{assignmentId: assignmentId})
+			.success(function(data) {
+				userFactory.user.points = data.points;
+				if(!data.msg) {
+					$('.plus-animation').remove();
+	            	var plus_animation = $('<span class="plus-animation">+ '+points+'</span>');
+	            	$('#points').before(plus_animation);
+	            }
+			});
 		console.log(assignmentId, points);
 	};
 
