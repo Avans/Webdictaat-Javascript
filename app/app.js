@@ -1,6 +1,7 @@
 var app = angular.module("myApp", []);
 
-BASE_URL = 'https://pointypony.herokuapp.com';
+
+BASE_URL = 'http://localhost:3000';//https://pointypony.herokuapp.com';
 
 //Comentaar toevoegen
 
@@ -24,7 +25,7 @@ app.factory('UserFactory', function($http){
 	};
 
 	userFactory.login = function() {
-		window.location.assign(BASE_URL + '/auth/avans');
+		window.location.assign(BASE_URL + '/auth/avans?returnUrl=' + window.location);
 	};
 
 	userFactory.logout = function() {
