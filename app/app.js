@@ -1,21 +1,66 @@
-var app = angular.module("myApp", []);
+var app = angular.module("myApp", ["ui.router"]);
 
 
 BASE_URL = 'http://localhost:3000';//https://pointypony.herokuapp.com';
 
 //Comentaar toevoegen
 
+app.config(function($stateProvider, $httpProvider) {
+
+    $stateProvider
+    .state('home', {
+        url: '/',
+        templateUrl: 'home.html'
+    })
+    .state('token', {
+        url: '/token={token:.+}',
+        controller: function($state, $stateParams, UserFactory) {
+            window.localStorage['token'] = $stateParams.token;
+            $state.go('home');
+            UserFactory.fetchInfo();
+        }
+    })
+    .state('page', {
+        url: '/{url:.+}',
+        template: '<div ng-include="url" updatelinks></div>',
+        controller: function($scope, $stateParams) {
+            $scope.url = $stateParams.url;
+        }
+    });
+});
+
+app.directive('updatelinks', function($compile) {
+    return {
+        link: function(scope, element) {
+            var links = element.find('a').each(function(a) {
+                $(this).attr('href', '#/'+$(this).attr('href'));
+            });
+
+            if(scope.url) {
+                var dirname = scope.url.substring(0, scope.url.lastIndexOf('/'));
+
+                element.find('img').each(function() {
+                   $(this).attr('src', dirname + '/' + $(this).attr('src'));
+                });
+            }
+
+        }
+    };
+});
+
+
 app.factory('UserFactory', function($http){
 	var userFactory = {};
 
-	userFactory.fetchInfo = function(options){
+	userFactory.fetchInfo = function(){
 		$http.get(BASE_URL + '/Points?token=' + window.localStorage['token'])
-			.success(function(data, status, headers, config){
-				if(data)
-					options.success(data);
-				else
-					options.error(status);
-			});
+    		.success(function(data, status, headers, config){
+    			if(data.username) {
+                    userFactory.user.isLoggedIn = true;
+                    userFactory.user.username = data.username;
+                    userFactory.user.points = data.points;
+                }
+            });
 	};
 
 	userFactory.user = {
@@ -154,15 +199,7 @@ app.controller("UserController", ["$scope", "$http", "UserFactory", function($sc
 		UserFactory.logout();
 	};
 
-	UserFactory.fetchInfo({
-		success: function(userInfo) {
-			if(userInfo.username) {
-				$scope.user.isLoggedIn = true;
-				$scope.user.username = userInfo.username;
-				$scope.user.points = userInfo.points;
-			}
-		}
-	});
+	UserFactory.fetchInfo();
 
 }]);
 
@@ -179,3 +216,16 @@ app.controller("LeaderboardController", ["$scope", "$http", "UserFactory", funct
 			$scope.leaderboard = data;
 	});
 }]);
+
+var get_editor = function(element) {
+    var editor = ace.edit(element);
+    editor.setTheme("ace/theme/chrome");
+    editor.setHighlightActiveLine(false);
+    editor.setShowFoldWidgets(false);
+    editor.setShowPrintMargin(false);
+    editor.session.setUseWrapMode(true);
+    editor.renderer.setShowGutter(false);
+    editor.renderer.setScrollMargin(8, 8, 0, 0);
+    editor.renderer.setPadding(10);
+    return editor;
+};

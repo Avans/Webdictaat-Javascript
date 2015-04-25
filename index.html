@@ -17,10 +17,9 @@
     <script src="static/js/jquery-1.9.1.js"></script>
     <script src="static/js/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.js"></script>
 
     <script src="static/ace/ace.js"></script>
-    <script src="static/js/webdictaat.js"></script>
-
     <script src="static/js/prettify.packed.js"></script>
     <script src="static/js/console.js"></script>
     <script src="static/js/live_assignments.js"></script>
@@ -28,7 +27,7 @@
     <script src="app/app.js"></script>
   </head>
 
-  <body>
+  <body updatelinks>
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -38,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand no_ajax" href="http://avans.github.io/Webdictaat-Javascript/">Webdictaat JavaScript</a>
+          <a class="brand no_ajax" ui-sref="home">Webdictaat JavaScript</a>
 
           <div  ng-controller="UserController">
             <ul class="nav pull-right" ng-show="user.isLoggedIn">
@@ -80,51 +79,7 @@
 
           </div><!--/.well -->
         </div><!--/span-->
-        <article class="span9" id="content">
-
-          <!--<my-daily-quest></my-daily-quest>-->
-
-          <div class="row-fluid">
-            <div class="span6">
-
-              <div id="leaderboards" ng-controller="LeaderboardController">
-
-                <div ng-hide="user.isLoggedIn">
-                  <h2>Welkom</h2>
-
-                  <p>Login voor meer informatie. </p>
-                  <button class="btn login" ng-click="login()">Inloggen</button>
-                </div>
-                <div ng-show="user.isLoggedIn">
-                  <h2>Welkom {{user.username}}</h2>
-                  <p>You currently have {{user.points}} Avanspoints</p>
-
-                  <table class="leaderBoard table">
-                    <thead>
-                      <tr>
-                        <th>#</th><th>Username</th><th>Points</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr ng-repeat="user in leaderboard.users">
-                        <td>{{$index + 1}}</td>
-                        <td>{{user.email}}</td>
-                        <td>{{user.points}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                </div>
-              </div> <!-- End of Leaderboard controller -->
-            </div>
-            <div class="span6">
-
-              <!-- Twitter Feed -->
-              <iframe src="twitter.html" class="twitter"></iframe>
-
-            </div>
-          </div> <!-- end of row -->
-
+        <article class="span9" id="content" ui-view>
         </article><!--/span-->
       </div><!--/row-->
 
