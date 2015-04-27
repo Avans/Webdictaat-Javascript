@@ -33,7 +33,10 @@ app.directive('updatelinks', function($compile) {
     return {
         link: function(scope, element) {
             var links = element.find('a').each(function(a) {
-                $(this).attr('href', '#/'+$(this).attr('href'));
+                var href = $(this).attr('href');
+                if(!$(this).hasClass('no_ajax') && !href.startsWith('http')) {
+                    $(this).attr('href', '#/'+href);
+                }
             });
 
             if(scope.url) {
@@ -129,7 +132,21 @@ app.directive('spChallenge', function($compile, UserFactory) {
                 iframe.contents().find('body').append(assignment.html);
                 var frameWindow = iframe[0].contentWindow;
 
+                // Load jQuery
+                if(assignment.jquery) {
+                    var jquerySource = '';
+                    var f = $.ajax('static/js/jquery.js', {
+                        async: false,
+                        cache: true,
+                        success: function(data) {
+                            jquerySource = data;
+                        }
+                    });
+                    frameWindow.eval(jquerySource);
+                }
+
                 try {
+
                     // Run the code!
                     frameWindow.eval(user_code);
 
