@@ -34,7 +34,7 @@ app.directive('updatelinks', function($compile) {
         link: function(scope, element) {
             var links = element.find('a').each(function(a) {
                 var href = $(this).attr('href');
-                if(!$(this).hasClass('no_ajax') && !href.startsWith('http')) {
+                if(!$(this).hasClass('no_ajax') && href.substr(0, 4) !== 'http') {
                     $(this).attr('href', '#/'+href);
                 }
             });
