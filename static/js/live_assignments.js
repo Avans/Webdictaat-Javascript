@@ -16,7 +16,7 @@ var assert = {
         }
     },
     isArray: function(value, error) {
-        if(value.constructor.name !== 'Array') {
+        if(Object.prototype.toString.call(value) !== '[object Array]') {
             throw error;
         }
     },
