@@ -289,7 +289,7 @@ body {
 
 .nav ol {
     list-style-type: decimal;
-    list-style-position:inside;
+    margin-left: 10px;
 }
 
 #theory > li > a{
