@@ -34,7 +34,7 @@ app.directive('updatelinks', function($compile) {
         link: function(scope, element) {
             var links = element.find('a').each(function(a) {
                 var href = $(this).attr('href');
-                if(!$(this).hasClass('no_ajax') && !href.startsWith('http')) {
+                if(!$(this).hasClass('no_ajax') && href.indexOf('http') !== 0) {
                     $(this).attr('href', '#/'+href);
                 }
             });
@@ -152,7 +152,7 @@ app.directive('spChallenge', function($compile, UserFactory) {
 
                     // Test the return value
                     var returnValue = frameWindow.eval(assignment.return);
-                    assignment.tester(returnValue);
+                    assignment.tester(returnValue, user_code);
 
                     // No error, complete the assignment!
                     UserFactory.completeAssignment(assignment.id, assignment.points);
