@@ -1,7 +1,7 @@
 var app = angular.module("myApp", ["ui.router"]);
 
 
-BASE_URL = 'http://localhost:3000'//https://pointypony.herokuapp.com';
+BASE_URL = 'https://pointypony.herokuapp.com';
 
 //Comentaar toevoegen
 
@@ -223,6 +223,7 @@ app.controller("UserController", ["$scope", "$http", "UserFactory", function($sc
 app.controller("LeaderboardController", ["$scope", "$http", "UserFactory", function($scope, $http, UserFactory){
 	$scope.leaderboard = [];
 	$scope.user = UserFactory.user;
+    $scope.consolation = null;
 
 	$scope.login = function() {
 		UserFactory.login();
@@ -231,6 +232,7 @@ app.controller("LeaderboardController", ["$scope", "$http", "UserFactory", funct
 	$http.get(BASE_URL + '/Leaderboards?token=' + window.localStorage['token'])
 		.success(function(data, status){
 			$scope.leaderboard = data;
+            $scope.consolation = data.consolation;
 	});
 }]);
 

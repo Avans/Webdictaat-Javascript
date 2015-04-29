@@ -393,6 +393,15 @@ figcaption {
     font-weight: bold;
 }
 
+.consolation{
+  padding-top:20px;
+}
+
+.consolation > td{
+  background-color:white;
+  border-bottom:2px solid black;
+}
+
  /** End leaderboard **/
 
  /** Daily Quests **/
@@ -408,3 +417,4 @@ figcaption {
 }
 
  /** End of daily quests **/
+
