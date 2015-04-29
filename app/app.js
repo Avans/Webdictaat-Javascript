@@ -152,7 +152,7 @@ app.directive('spChallenge', function($compile, UserFactory) {
 
                     // Test the return value
                     var returnValue = frameWindow.eval(assignment.return);
-                    assignment.tester(returnValue);
+                    assignment.tester(returnValue, user_code);
 
                     // No error, complete the assignment!
                     UserFactory.completeAssignment(assignment.id, assignment.points);

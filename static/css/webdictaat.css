@@ -68,6 +68,7 @@ p > code, li > code, dt > code, dd > code {
   display: block;
   margin: 10px auto;
   background-color: white !important;
+  white-space: pre-wrap;
 }
 
 .live_assignment .alert {
