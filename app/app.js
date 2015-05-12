@@ -1,7 +1,7 @@
 var app = angular.module("myApp", ["ui.router"]);
 
 
-BASE_URL = 'https://pointypony.herokuapp.com';
+BASE_URL = 'http://localhost:3000'//'https://pointypony.herokuapp.com';
 
 //Comentaar toevoegen
 
