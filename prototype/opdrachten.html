@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Opdrachten week 3</title>
+</head>
+
+<body>
+  <h1>Opdrachten week 3</h1>
+
+  <div class="assignment easy">
+    <img src="uitwerking-ninja.png" class="screenshot" alt="Uitwerking">
+    <h2>Ninja's</h2>
+
+    <p>Deze week gaan we oefenen met constructor functions. In onderstaande code wordt er gebruik gemaakt van een constructor functie die een nieuw ninja plaatje op een specifieke x,y positie op de pagina zet. Elke ninja heeft ook een functie hide() waarmee ze hun sneaky ninja skills kunnen activeren.</p>
+
+    <code class="pre">var ninja1 = new Ninja(50, 100);
+var ninja2 = new Ninja(200, 200);
+var ninja3 = new Ninja(300, 150);
+ninja3.hide();</code>
+
+    <p>Maak de bijbehorende Ninja constructor function en zorg ervoor dat ze via hun prototype object een hide() functie hebben waarmee ze zichzelf kunnen hiden (opacity veranderen)</p>
+
+  </div>
+
+  <div class="assignment medium">
+    <img src="uitwerking-tictactoe.png" class="screenshot" alt="Uitwerking">
+    <h2>Boter, Kaas en Eieren</h2>
+
+    <p>Veel implementaties van boter, kaas en eieren op internet maken geen gebruik objecten en prototypes. Vaak is het maar een zooitje van losse functies.</p>
+
+    <p>Maak je eigen versie van Boter, Kaas en eieren waarbij je de staat van het spel in objecten bijhoudt. Maak de volgende constructor functions: <code>TicTacToe</code>, <code>Player</code> en <code>Square</code>. TicTacToe heeft 9 Square objecten en 2 Player objecten. De Square objecten houden bij welk symbool er op een vakje staat.</p>
+
+    <p>Zet alle functionaliteit van het spel in de 'methode' functies van de objecten.</p>
+
+  </div>
+
+  <div class="assignment hard">
+    <h2>Ninja 2</h2>
+
+    <p>Breid het Ninja programma uit zodat elke <code>Ninja</code> een <code>Human</code> prototype heeft. Elke <code>Ninja</code> kan een <code>Katana</code> of een <code>DragonStar</code> instantie hebben, die allebei <code>Weapon</code> als prototype hebben.. Verzin voor elk prototype object functies die daarbij horen (zoals walk(), strike(), throw(), use(). Implementeer ze met een simpele console.log()). Test je programma door verschillende ninja's en wapens te maken en ze die te laten gebruiken.</p>
+
+  </div>
+
+  </body>
+</html>
