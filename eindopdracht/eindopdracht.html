@@ -22,7 +22,7 @@
 <body>
   <h1>Eindopdracht</h1>
 
-  <p>De eindopdracht voor dit vak is om het spel <a href="http://nl.wikipedia.org/wiki/Zeeslag_(spel)" target="_blank">zeeslag</a> te maken in je browser. Niet zomaar een zeeslag, maar eentje die je online tegen een computer kan spelen of tegen iemand anders uit jouw klas. We hebben daarvoor een API gemaakt waarmee je moet communiceren om het spel te spelen. De documentatie daarvan vind je op <a href="...">deze pagina</a></p>
+  <p>De eindopdracht voor dit vak is om het spel <a href="http://nl.wikipedia.org/wiki/Zeeslag_(spel)" target="_blank">zeeslag</a> te maken in je browser. Niet zomaar een zeeslag, maar eentje die je online tegen een computer kan spelen of tegen iemand anders uit jouw klas. We hebben daarvoor een API gemaakt waarmee je moet communiceren om het spel te spelen. De documentatie daarvan vind je op <a href="https://zeeslagavans.herokuapp.com/docs">deze pagina</a></p>
 
   <p>Je mag jouw versie zo mooi maken als je zelf wil, maar het moet wel aan onderstaande eisen voldoen. Begin niet te lang met wachten om aan de opdracht te beginnen, je hebt zeker een paar weken nodig om het goed af te maken!</p>
 
@@ -45,9 +45,19 @@
   <h4>Functionele eisen:</h4>
 
   <ul>
-    <li>Het spel doorloopt verschillende <i>fases</i>. Een paar fases zijn bijvoorbeeld: Spel uitzoeken, schepen plaatsen, mijn beurt om een vakje te schieten, tegenstanders beurt, einde spel. Elke fase heeft zijn eigen user interface en regels, je mag bijvoorbeeld niet zelf een vakje schieten als het de beurt van de tegenstander is.</li>
+    <li>Het spel doorloopt verschillende <i>fases</i>. Een paar fases zijn bijvoorbeeld: Spel uitzoeken, schepen plaatsen, mijn beurt om een vakje te schieten, tegenstanders beurt, einde spel. Volg de flow van het spel zoals beschreven in de <a href="https://zeeslagavans.herokuapp.com/docs#spelregels" target="_blank">API documentatie</a>. Elke fase heeft zijn eigen user interface en regels, je mag bijvoorbeeld niet zelf een vakje schieten als het de beurt van de tegenstander is.</li>
 
     <li>Bij het uitzoeken van een spel kan de gebruiker kiezen uit 'Speel tegen een computer' of 'Speel tegen iemand anders'.</li>
+
+    <li>Het moet mogelijk zijn om een lijst van alle lopende games te zien, en een game te selecteren om mee verder te spelen.</li>
+
+    <li>De namen en lengtes van de schepen die de gebruiker kan plaatsen haal je uit de API.</li>
+
+    <li>De gebruiker kan bij aanvang van het spel schepen horizontaal of verticaal plaatsen op het bord.</li>
+
+    <li>Tijdens het spel kan de gebruiker op een vakje schieten als hij aan de beurt is. Met een refresh knop kan de gebruiker zien of hij weer aan de beurt is als hij wacht op de tegenstander (polling mag ook maar wees aardig voor de server, niet elke seconde!).</li>
+
+    <li>Als het spel is afgelopen (gewonnen of verloren) laat je dat duidelijk aan de gebruiker zien.</li>
 
   </ul>
 
@@ -73,18 +83,15 @@
   <img src="battleship_extra.jpg" class="right">
   <h4>Extra eisen</h4>
 
-  <p>Heb je alle functionele goed geimplementeerd? Dan heb je een 7, je kan dan nog 3 bonuspunten verdienen door extra eisen te implementeren:</p>
+  <p>Heb je alle functionele eisen goed geimplementeerd? Dan heb je een 7, je kan dan nog 3 bonuspunten verdienen door extra eisen te implementeren:</p>
 
   <ul>
     <li>Maak het spel extra mooi met animaties of geluidjes.</li>
 
     <li>Maak een drag &amp; drop interface voor het plaatsen van scheepjes op het speelbord.</li>
 
-    <li>Voor de absolute 10 moet je zelf nog iets verzinnen. Misschien een knop die automatisch een slimme zet suggereert? Of een mogelijkheid om layout van schepen op te slaan? Verras ons!</li>
+    <li>Voor de absolute 10 moet je zelf nog iets verzinnen. Misschien een knop die automatisch een slimme zet suggereert? Of een mogelijkheid om layouts van schepen op te slaan? Verras ons!</li>
 
   </ul>
-
-
-
   </body>
 </html>
