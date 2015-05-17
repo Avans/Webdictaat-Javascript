@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eindopdracht</title>
+  <style>
+  .right {
+    float: right;
+    margin: 20px;
+    width: 25%;
+  }
+
+  article h4 {
+    margin-top: 20px;
+  }
+
+  article li {
+    margin: 5px;
+  }
+  </style>
+</head>
+
+<body>
+  <h1>Eindopdracht</h1>
+
+  <p>De eindopdracht voor dit vak is om het spel <a href="http://nl.wikipedia.org/wiki/Zeeslag_(spel)" target="_blank">zeeslag</a> te maken in je browser. Niet zomaar een zeeslag, maar eentje die je online tegen een computer kan spelen of tegen iemand anders uit jouw klas. We hebben daarvoor een API gemaakt waarmee je moet communiceren om het spel te spelen. De documentatie daarvan vind je op <a href="...">deze pagina</a></p>
+
+  <p>Je mag jouw versie zo mooi maken als je zelf wil, maar het moet wel aan onderstaande eisen voldoen. Begin niet te lang met wachten om aan de opdracht te beginnen, je hebt zeker een paar weken nodig om het goed af te maken!</p>
+
+  <p>
+
+  <img src="battleship_organized.jpg" class="right">
+  <h4>Organisatorische eisen</h4>
+
+  <ul>
+    <li>Je maak het project in duo's. Uitzonderingen moeten eerst worden overlegd met de practicumdocent.</li>
+
+    <li>Jullie moeten allebei alle code goed kunnen uitleggen. "Ik weet niet hoe dat werkt want dat heb ik niet gemaakt" levert je minpunten op.</li>
+
+    <li>Je hoeft het project niet in te leveren. Je laat deze tijdens het assessment aan de assessor zien.</li>
+
+    <li>De eerste assessments beginnen op <b>maandag 22 juni in week 9</b>. Hou deze datum als deadline voor je project aan. Het inschrijfrooster komt in week 7 of 8 beschikbaar.</li>
+  </ul>
+
+  <img src="battleship_firing.jpg" class="right">
+  <h4>Functionele eisen:</h4>
+
+  <ul>
+    <li>Het spel doorloopt verschillende <i>fases</i>. Een paar fases zijn bijvoorbeeld: Spel uitzoeken, schepen plaatsen, mijn beurt om een vakje te schieten, tegenstanders beurt, einde spel. Elke fase heeft zijn eigen user interface en regels, je mag bijvoorbeeld niet zelf een vakje schieten als het de beurt van de tegenstander is.</li>
+
+    <li>Bij het uitzoeken van een spel kan de gebruiker kiezen uit 'Speel tegen een computer' of 'Speel tegen iemand anders'.</li>
+
+  </ul>
+
+  <img src="battleship_engine.jpg" class="right">
+  <h4>Technische eisen</h4>
+
+  <ul>
+    <li>Alle code is geschreven in JavaScript, dus geen PHP of andere server-side talen.</li>
+
+    <li>Het hele spel wordt gespeeld op één enkele pagina, gebruik dus geen iframes of links naar andere pagina's</li>
+
+    <li>Plaats alle JavaScript code in losse JavaScript bestanden die je include in de HTML. Plaats geen JavaScript in de HTML zelf.</li>
+
+    <li>Je mag geen gebruik maken van JavaScript frameworks zoals Angular, React.js of Backbone. jQuery is toegestaan. Overleg altijd even met je practicumdocent als je JavaScript libraries wilt gebruiken die specifieke functionaliteit makkelijker maken (zoals Three.js of SoundJS).</li>
+
+    <li>Zorg voor overzichtelijke leesbare JavaScript code. Code die geminified is kunnen we tijdens het assessment niet beoordelen.</li>
+
+    <li>Maak gebruik van constructor functies en prototypes om je code op te delen in verschillende soorten objecten. Denk bijvoorbeeld aan: <code>GameList</code>, <code>Game</code>, <code>Board</code>, <code>Ship</code> en <code>Square</code>. Zorg ervoor dat minstens 50% van je code in de 'methodes' zitten van deze objecten (Dat is minder moeilijk dan het lijkt, in alle C# en Java die je tot nu toe hebt geschreven staat 100% van je code in methodes)</li>
+
+    <li>Gebruik onze API om online tegen iemand anders zeeslag te kunnen spelen. Alle API aanroepen maak je doormiddel van AJAX requests. Je mag hier jQuery voor gebruiken.</li>
+  </ul>
+
+  <img src="battleship_extra.jpg" class="right">
+  <h4>Extra eisen</h4>
+
+  <p>Heb je alle functionele goed geimplementeerd? Dan heb je een 7, je kan dan nog 3 bonuspunten verdienen door extra eisen te implementeren:</p>
+
+  <ul>
+    <li>Maak het spel extra mooi met animaties of geluidjes.</li>
+
+    <li>Maak een drag &amp; drop interface voor het plaatsen van scheepjes op het speelbord.</li>
+
+    <li>Voor de absolute 10 moet je zelf nog iets verzinnen. Misschien een knop die automatisch een slimme zet suggereert? Of een mogelijkheid om layout van schepen op te slaan? Verras ons!</li>
+
+  </ul>
+
+
+
+  </body>
+</html>
