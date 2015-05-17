@@ -174,7 +174,7 @@ var assignments = {
         }
      },
      prototype_car: {
-        id: "TBD",
+        id: "5558e7ca0949a911006dd8b1",
         title: "New car smell",
         description: "Maak een Car contructor functie die je kan aanroepen met \"new Car('Tesla');\". Zorg ervoor dat er dan het volgende object uitkomt: {type: 'Tesla'} (afhankelijk van parameter uiteraard).",
         points: 10,
@@ -188,7 +188,7 @@ var assignments = {
         }
      },
      prototype_car_gettype: {
-        id: "TBD",
+        id: "5558e7dd0949a911006dd8b2",
         title: "Got type?",
         description: "Kopieer de code van vorige opgave en voeg een getType() functie toe aan Car.prototype die het type van de auto teruggeeft.",
         points: 10,
@@ -207,7 +207,7 @@ var assignments = {
         }
      },
      prototype_reverse: {
-        id: "TBD2",
+        id: "5558e7ec0949a911006dd8b3",
         title: "diaardegmO",
         description: "Definieer een reversed() functie op het prototype van String die de omgekeerde waarde teruggeeft. \"WEBS3\".reversed() geeft bijvoorbeeld \"3SBEW\" terug.",
         points: 10,
