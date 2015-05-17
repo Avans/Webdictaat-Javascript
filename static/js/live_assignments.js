@@ -172,5 +172,54 @@ var assignments = {
 
             assert.isTrue($(document).find('p').is(':hidden'), "Zorg ervoor dat knoppen die dynamisch worden toegevoegd aan de 'knoppen' div automatisch ook p's verbergen.");
         }
-     }
+     },
+     prototype_car: {
+        id: "TBD",
+        title: "New car smell",
+        description: "Maak een Car contructor functie die je kan aanroepen met \"new Car('Tesla');\". Zorg ervoor dat er dan het volgende object uitkomt: {type: 'Tesla'} (afhankelijk van parameter uiteraard).",
+        points: 10,
+        return: "window",
+        tester: function(window) {
+            assert.isFunction(window.Car, "Definieer een Car constructor functie");
+
+            var car = new window.Car('BMW');
+            assert.isTrue(car instanceof window.Car, "Object heeft niet het Car prototype, gebruik geen return!");
+            assert.isEqual(car.type, "BMW", "Nieuwe object krijgt niet de juiste 'type' property");
+        }
+     },
+     prototype_car_gettype: {
+        id: "TBD",
+        title: "Got type?",
+        description: "Kopieer de code van vorige opgave en voeg een getType() functie toe aan Car.prototype die het type van de auto teruggeeft.",
+        points: 10,
+        return: "window",
+        tester: function(window) {
+            assert.isFunction(window.Car, "Definieer een Car constructor functie");
+
+            var car = new window.Car('BMW');
+            assert.isTrue(car instanceof window.Car, "Object heeft niet het Car prototype, gebruik geen return!");
+            assert.isEqual(car.type, "BMW", "Nieuwe object krijgt niet de juiste 'type' property");
+
+            assert.isFunction(car.getType, "Nieuwe Car objecten hebben niet een getType() functie");
+
+            assert.isFunction(window.Car.prototype.getType, "Voeg de functie toe via het prototype object van Car");
+            assert.isEqual(car.getType(), "BMW", "getType() geeft niet het juiste type terug");
+        }
+     },
+     prototype_reverse: {
+        id: "TBD2",
+        title: "diaardegmO",
+        description: "Definieer een reversed() functie op het prototype van String die de omgekeerde waarde teruggeeft. \"WEBS3\".reversed() geeft bijvoorbeeld \"3SBEW\" terug.",
+        points: 10,
+        return: "window",
+        tester: function(window) {
+            assert.isFunction(window.String.prototype.reversed, "Definieer een reversed() functie op het prototype van String");
+
+            var string = new window.String("123456789");
+            var result = string.reversed();
+            assert.isDefined(result, "Je functie returned geen waarde");
+            assert.isEqual(result, "987654321", "Je functie moet de omgekeerde string teruggeven");
+            throw ":(";
+        }
+     },
 }
