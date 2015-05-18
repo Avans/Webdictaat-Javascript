@@ -219,7 +219,6 @@ var assignments = {
             var result = string.reversed();
             assert.isDefined(result, "Je functie returned geen waarde");
             assert.isEqual(result, "987654321", "Je functie moet de omgekeerde string teruggeven");
-            throw ":(";
         }
      },
 }
