@@ -267,7 +267,7 @@ var assignments = {
      },
      ajax_xhr: {
         id: "55631b6a0eaa3b41ed865b13",
-        title: "XmlHTTPRequest",
+        title: "XMLHttpRequest",
         description: "Doe in JavaScript een GET request naar 'http://avans.github.io/Webdictaat-Javascript/'. Geen jQuery deze keer!",
         points: 10,
         prepare: prepareXHR,
