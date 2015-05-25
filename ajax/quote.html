@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quote van de dag</title>
+    <style>
+body {
+  text-align: center;
+}
+blockquote {
+  display: inline-block;
+  width: auto;
+  margin: 1em;
+  padding: 1em;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px #ccc;
+  font-style: italic;
+  margin-left: auto;
+  margin-right: auto;
+}
+blockquote:before {
+  font-size: 3em;
+  color: #ccc;
+  content: open-quote;
+  vertical-align: -0.25em;
+}
+blockquote:after {
+  font-size: 3em;
+  color: #ccc;
+  content: close-quote;
+  vertical-align: -0.25em;
+}
+
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Quote van de dag</h1>
+
+    <blockquote id="quote"></blockquote>
+  </body>
+</html>

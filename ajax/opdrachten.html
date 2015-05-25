@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Opdrachten week 4</title>
+</head>
+
+<body>
+  <h1>Opdrachten week 4</h1>
+
+  <p>Deze week gaan we oefenen met <b>Asynchronous JavaScript and XML</b>, oftewel AJAX. We hebben een aantal webservices klaargezet waar jullie mee kunnen oefenen. Je mag voor alle opdrachten jQuery gebruiken om het jezelf makkelijk te maken.</p>
+
+  <div class="assignment easy">
+    <img src="uitwerking-quote.png" class="screenshot" alt="Uitwerking">
+    <h2>Quote</h2>
+
+    <p>Op deze URL: <code>http://network.aii.avans.nl/quote</code> staat een webservice die een willekeurige quote teruggeeft. Deze site is speciaal ingesteld zodat je er vanaf elk domein een Ajax request naar mag doen.</p>
+
+    <p>Maak een site waarbij je een willekeurige quote laat zien geladen uit bovenstaande URL. Gebruik Ajax en JavaScript om dat voor elkaar te krijgen</p>
+
+    <p>Als je voor een pixel-perfecte kopie van de screenshot gaat mag je gebruik maken van onze <a href="ajax/quote.html" class="no_ajax">HTML en CSS</a></p>
+
+    <p><b>Hint:</b> Met de jQuery <a href="http://api.jquery.com/load/" target="_blank">load()</a> functie kan je jezelf het er heel makkelijk vanaf maken</p>
+  </div>
+
+  <div class="assignment medium">
+    <img src="uitwerking-weather.png" class="screenshot" alt="Uitwerking">
+    <h2>Weer</h2>
+
+    <p>Met onze weer webservice <code>http://network.aii.avans.nl/weather?location=<i>Eindhoven</i></code> kan je dynamisch weergegevens ophalen over een bepaalde stad. Die stad moet je als 'location' parameter meegeven in de URL.</p>
+
+    <p>Maak een kleine webapplicatie waarop de gebruiker een stad kan invullen en op een knop kan klikken. Jouw JavaScript haalt dan de huidige temperatuur op in die stad en toont die op de webpagina.</p>
+
+    <p>(Data is afkomstig van http://api.openweathermap.org/data/2.5/weather?q=Eindhoven maar die service is helaas niet ingesteld dat je er met Ajax bij mag.)</p>
+
+    <p><a href="ajax/weather.html" class="no_ajax">HTML &amp; CSS</a></p>
+
+  </div>
+
+  <div class="assignment hard">
+    <img src="uitwerking-chat.png" class="screenshot" alt="Uitwerking">
+    <h2>Chat</h2>
+
+    <p>Met de komst van Ajax hoeven we niet meer Flash of Java-applets te gebruiken om chatrooms te implementeren. Alles is mogelijk met alleen maar HTML en JavaScript.</p>
+
+    <p>De moeilijke opdracht deze week is om een online chatpagina te maken. Laat bij het opstarten meteen de laatste berichten in de chat zien. Nadat de gebruiker een berichtje verstuurd ververs je de laatste chatberichten</p>
+
+    <p>Als je een request doet naar <code>http://network.aii.avans.nl/chat</code> krijg je een lijst van de laatste chatberichten in onze Avans chatroom. Je kan zelf ook een berichtje plaatsen door een POST request te doen naar dezelfde URL met het volgende JSON bericht: <code>{"nickname": "<i>Naam</i>", "message": "<i>Bericht</i>"}</code></p>
+
+    <p><a href="ajax/chat.html" class="no_ajax">HTML &amp; CSS</a></p>
+  </div>
+
+   <div class="assignment">
+
+     <h1>Huiswerk</h1>
+
+     <img src="battleship_pegs.jpg" class="screenshot" style="width: 40%">
+
+     <p>Elke week maken we weer een stukje van de eindopdracht. Deze week één van de belangrijkste aspecten: de communicatie met de gameserver.</p>
+
+     <p>Op de <a href="https://zeeslagavans.herokuapp.com/docs">API documentatie</a> vind je alle URL's waar je informatie uit kunt halen of informatie naar moet POST'en. Begin met het ophalen van de <a href="https://zeeslagavans.herokuapp.com/docs#megames">lijst van games</a> waarin je meespeelt en die goed weergeven in de HTML.</p>
+
+   </div>
+
+
+  </body>
+</html>
