@@ -132,6 +132,10 @@ app.directive('spChallenge', function($compile, UserFactory) {
                 iframe.contents().find('body').append(assignment.html);
                 var frameWindow = iframe[0].contentWindow;
 
+                if(assignment.prepare) {
+                    assignment.prepare(frameWindow);
+                }
+
                 // Load jQuery
                 if(assignment.jquery) {
                     var jquerySource = '';

@@ -51,6 +51,20 @@ var assert = {
         }
     }
 };
+
+function prepareXHR(window) {
+    window.xhr = {};
+    window.XMLHttpRequest.prototype.open = function(method, url, async) {
+        window.xhr.opened = true;
+        window.xhr.method = method;
+        window.xhr.url = url;
+        window.xhr.async = async;
+    };
+    window.XMLHttpRequest.prototype.send = function(string) {
+        window.xhr.sent = true;
+        window.xhr.string = string;
+    };
+}
 // NIET SPIEKEN!
 // ANTWOORDEN WORDEN IN DE TOEKOMST OOK OP DE SERVER GECHECKT!
 
@@ -219,6 +233,50 @@ var assignments = {
             var result = string.reversed();
             assert.isDefined(result, "Je functie returned geen waarde");
             assert.isEqual(result, "987654321", "Je functie moet de omgekeerde string teruggeven");
+        }
+     },
+     ajax_get: {
+        id: "55631ab90eaa3b41ed865b11",
+        title: "GET",
+        description: "Doe in JavaScript een GET request naar 'http://avans.github.io/Webdictaat-Javascript/'. Je mag jQuery gebruiken.",
+        jquery: true,
+        points: 10,
+        prepare: prepareXHR,
+        return: "window",
+        tester: function(window) {
+            assert.isTrue(window.xhr.sent, "Je hebt geen request verstuurd");
+            assert.isTrue(window.xhr.opened, "Je bent geen request begonnen");
+            assert.isEqual(window.xhr.url, 'http://avans.github.io/Webdictaat-Javascript/', "Request is naar de verkeerde URL");
+            assert.isEqual(window.xhr.method, "GET", "Request is geen GET request");
+        }
+     },
+     ajax_post: {
+        id: "55631ad30eaa3b41ed865b12",
+        title: "POST",
+        description: "Doe in JavaScript een POST request naar 'http://avans.github.io/Webdictaat-Javascript/'. Je mag jQuery gebruiken.",
+        jquery: true,
+        points: 10,
+        prepare: prepareXHR,
+        return: "window",
+        tester: function(window) {
+            assert.isTrue(window.xhr.sent, "Je hebt geen request verstuurd");
+            assert.isTrue(window.xhr.opened, "Je bent geen request begonnen");
+            assert.isEqual(window.xhr.url, 'http://avans.github.io/Webdictaat-Javascript/', "Request is naar de verkeerde URL");
+            assert.isEqual(window.xhr.method, "POST", "Request is geen POST request");
+        }
+     },
+     ajax_xhr: {
+        id: "55631b6a0eaa3b41ed865b13",
+        title: "XmlHTTPRequest",
+        description: "Doe in JavaScript een GET request naar 'http://avans.github.io/Webdictaat-Javascript/'. Geen jQuery deze keer!",
+        points: 10,
+        prepare: prepareXHR,
+        return: "window",
+        tester: function(window) {
+            assert.isTrue(window.xhr.opened, "Je bent geen request begonnen");
+            assert.isTrue(window.xhr.sent, "Je hebt geen request verstuurd");
+            assert.isEqual(window.xhr.url, 'http://avans.github.io/Webdictaat-Javascript/', "Request is naar de verkeerde URL");
+            assert.isEqual(window.xhr.method, "GET", "Request is geen GET request");
         }
      },
 }
