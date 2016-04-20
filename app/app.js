@@ -7,14 +7,10 @@ BASE_URL = 'https://pointypony.herokuapp.com';
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home.html');
 
 
     $stateProvider
-    .state('home', {
-        url: '/home',
-        templateUrl: '/home.html'
-    })
     .state('token', {
         url: '/token={token:.+}',
         controller: function($state, $stateParams, UserFactory) {
