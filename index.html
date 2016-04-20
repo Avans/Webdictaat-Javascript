@@ -29,39 +29,35 @@
 
   <body updatelinks>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+  <div class="header">
+    <div class="navbar navbar-top">
+         <div class="container-fluid">
+
+
+
           <a class="brand no_ajax" ui-sref="home">Webdictaat JavaScript</a>
 
           <div  ng-controller="UserController">
             <ul class="nav pull-right" ng-show="user.isLoggedIn">
-              <li><button class="btn" id="logout" ng-click="logout()">Uitloggen</button></li>
+             
               <li><p id="logged_in_name" class="nav navbar-text">Ingelogd als {{user.username}}</p></li>
               <li><p id="points" class="nav navbar-text">{{user.points}} punten</p></li>
+              <li><button class="mat" id="logout" ng-click="logout()">Uitloggen</button></li>
             </ul>
 
             <ul class="nav pull-right" ng-hide="user.isLoggedIn">
-              <li><button class="btn" id="login" ng-click="login()">Inloggen</button></li>
+              <li><button class="mat" id="login" ng-click="login()">Inloggen</button></li>
             </ul>
           </div>
-
-        </ul>
-        </div>
-
-
-      </div>
+         
+         </div>
     </div>
+  </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid content">
       <div class="row-fluid">
         <div class="span3">
-          <div class="well sidebar-nav">
+          <div class="sidebar-nav card">
             <ul class="nav nav-list" id="assignments">
               <li class="nav-header">Opdrachten</li>
               <li><a href="basis/opdrachten.html">Opdrachten week 1</a></li>
