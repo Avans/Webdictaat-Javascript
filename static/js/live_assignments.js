@@ -86,14 +86,14 @@ var assignments = {
     unixtime: {
         id: "553915c844761a2400e62edc",
         title: "Got the time?",
-        description: "Definieer een functie tijd() die de tijd in seconde sinds 1 jan. 1970 teruggeeft (de zogenaamde Unix Timestamp http://www.unixtimestamp.com/ )",
+        description: "Definieer een functie tijd() die de tijd in gehele seconde sinds 1 jan. 1970 teruggeeft (de zogenaamde Unix Timestamp http://www.unixtimestamp.com/ )",
         points: 10,
         return: "typeof tijd === 'undefined' ? undefined : tijd",
         tester: function(tijd) {
             var time = Math.floor(new Date().getTime() / 1000);
             assert.isFunction(tijd, "Je hebt geen functie 'tijd' gedefinieerd");
             assert.isNumber(tijd(), "Je functie geeft geen number waarde terug");
-            assert.isEqual(tijd(), time, "Je functie geeft niet de huidige tijd terug (is nu " + time + ")");
+            assert.isEqual(tijd(), time, "Je functie geeft " + tijd() + " terug. Dat is niet de huidige tijd (is nu " + time + ")");
         }
     },
     addition: {
