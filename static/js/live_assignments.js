@@ -1,4 +1,7 @@
 var assert = {
+    fail: function(error) {
+        throw error;
+    },
     isFunction: function(value, error) {
         if(typeof value !== 'function') {
             throw error;
@@ -276,7 +279,9 @@ var assignments = {
             assert.isTrue(window.xhr.opened, "Je bent geen request begonnen");
             assert.isTrue(window.xhr.sent, "Je hebt geen request verstuurd");
             assert.isEqual(window.xhr.url, 'http://avans.github.io/Webdictaat-Javascript/', "Request is naar de verkeerde URL");
-            assert.isEqual(window.xhr.method, "GET", "Request is geen GET request");
+            if(window.xhr.method != 'get' && window.xhr.method != 'GET') {
+                assert.fail("Request is geen GET request");
+            }
         }
      },
 }
