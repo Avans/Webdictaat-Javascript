@@ -72,7 +72,7 @@ app.factory('UserFactory', function($http){
 	};
 
 	userFactory.login = function() {
-		window.location.assign(BASE_URL + '/auth/avans?returnUrl=' + window.location);
+		window.location.assign(BASE_URL + '/auth/avans?returnUrl=http://avans.github.io/Webdictaat-Javascript');
 	};
 
 	userFactory.logout = function() {
