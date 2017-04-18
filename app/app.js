@@ -6,7 +6,7 @@ BASE_URL = 'https://pointypony.herokuapp.com';
 //Comentaar toevoegen
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
-    
+
     $urlRouterProvider.otherwise('/home.html');
 
 
@@ -40,9 +40,11 @@ app.directive('updatelinks', function($compile) {
 
             if(scope.url) {
                 var dirname = scope.url.substring(0, scope.url.lastIndexOf('/'));
-
+                if(dirname !== '') {
+                    dirname += '/'
+                }
                 element.find('img').each(function() {
-                   $(this).attr('src', dirname + '/' + $(this).attr('src'));
+                   $(this).attr('src', dirname + $(this).attr('src'));
                 });
             }
 

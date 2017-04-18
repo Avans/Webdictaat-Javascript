@@ -2,7 +2,7 @@
 <div ng-controller="LeaderboardController">
 <div class="row-fluid" >
     <div class="span6">
-      
+
 
       <div ng-hide="user.isLoggedIn">
         <h2>Welkom</h2>
@@ -17,12 +17,12 @@
       <h3>Snap jij deze expressies?</h3>
 
       <img src="basis/gek.png" class="screenshot"/>
-  
-      
-      <h3>Twitch Stream</h3>
-      
+
+
+      <!--h3>Twitch Stream</h3>
+
       <p>Volg nu de hoorcolleges op twitch! <a href="https://www.twitch.tv/avanswebs3">https://www.twitch.tv/avanswebs3</a></p>
-      
+      -->
       <h3>Punten</h3>
       <p>Je kan punten verdienen door:</p>
       <ul>
@@ -33,12 +33,12 @@
         <li>Een <span class="medium">medium</span> opgave te laten aftekenen bij de docent (+15)</li>
         <li>Een <span class="hard">moeilijke</span> opgave te laten aftekenen bij de docent (+20)</li>
       </ul>
-      
+
     </div>
-    <div class="span6">
+    <!--div class="span6">
       <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/AvansWebs3" data-widget-id="722340764550881280">Tweets by @AvansWebs3</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
+    </div-->
 
 
 
@@ -46,7 +46,7 @@
 
     <div id="leaderboards">
       <div ng-show="user.isLoggedIn">
-        
+
         <h3>Leaderboards</h3>
 
         <table class="leaderBoard table">
