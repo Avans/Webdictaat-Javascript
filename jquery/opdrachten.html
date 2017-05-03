@@ -51,37 +51,95 @@
     <p>Aan jou de taak om een online rekenmachine te maken die net als een echte rekenmachine werkt! Je kan met de knopjes of met het toetsenbord rekensommen intoetsen die verschijnen in het virtuele schermpje van de rekenmachine. Als je op de '=' klikt reken je in JavaScript de uitkomst van de som om te tonen.</p>
 
     <p><b>Uitdaging:</b> Voeg toe dat je met de uitkomst weer verder kan rekenen net als op een echte rekenmachine.</p>
-  </div><br/>
+  </div>
 
-   <!--div class="assignment">
+   <div class="assignment">
 
      <h1>Huiswerk</h1>
 
-      <p>Elke week gaan we een stukje van de eindopdracht maken. En laten we het maar meteen verklappen: het wordt een massively multiplayer online role-playing <b>Zeeslag</b> (MMORPZ). Na het bouwen van het speelbord, gaan we deze week aan de slag met de Harbor.</p>
+      <img src="huiswerk.png" class="screenshot">
 
-             <img src="battleships.jpg" class="screenshot">
-      <img src="huiswerk.png" class="screenshot" style="width: 40%">
+      <p>Elke week gaan we een stukje van de eindopdracht maken. Vorige week hebben we al een bord gemaakt met speelstukken waar je op kan klikken. Deze week gaan we ze verplaatsen om zo een beginopstelling te maken.</p>
 
-      <p>
-      Maak het onderdeel van de GUi dat verantwoordelijk is voor het selecteren en plaatsen van schepen. Het moet mogelijk zijn om uit een lijst van schepen (dummy data) een schip te selecteren en roteren. Het schip dat geselecteerd wordt, moet zichbaar worden in de vorm van een afbeelding. Daarnaast moet het mogelijk zijn om het geselecteerde schip te draaien. Een schip kan verticaal of horizontaal staan.
-      </p>
+      <p>Gebruik jQuery om te detecteren op welke vlakken op het bord, en op welke stukken er is geklikt. Als je eerst een speelstuk aanklikt (zet deze in eerste instantie naast of onder het bord) en daarna op een leeg vakje op het bord klikt verplaats je dat speelstuk naar het lege vakje op het bord.</p>
 
-      <p>
-      Er moeten minstens 4 schepen beschikbaar zijn om uit te selecteren, waaran elk schip minstens de volgende eigenschappnen heeft:
-      <ul>
-        <li>Oriëntatie (Horizontaal, Verticaal)</li>
-        <li>Lengte (2, 3, 4, 5)</li>
-        <li>Naam</li>
-      </ul>
-      </p>
+      <p>Zorg ervoor dat de gebruiker op die manier alle 40 speelstukken op de onderste 4 rijen kan neerzetten. Zorg ervoor dat je niet twee speelstukken in hetzelfde vakje kan zetten, en dat je speelstukken later nog in een ander vakje kan plaatsen.</p>
 
-      <p>
-        Uiteindelijk zal het mogelijk zijn een lijst van schepen op te vragen aan de server, maar dit gaan we later in deze course behandelen.
-      </p>
+      <p>Gebruik wederom een 10x10 array om in bij te houden welke stukken waar staan en om te bepalen of een vakje bezet is of niet.</p>
 
-      <p>Houd in JavaScript een datastructuur bij waarin je bijhoud welke vakjes van het bord wel en niet geschoten zijn.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Naam</th>
+            <th>Aantal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B</td>
+            <td>Bom</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Maarschalk</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Generaal</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Kolonel</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Majoor</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Kapitein</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Luitenant</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Sergeant</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Mineur</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Verkenner</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>S</td>
+            <td>Spion</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td>Vlag</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
 
-   </div-->
+   </div>
 
 
   </body>
