@@ -174,7 +174,7 @@ var assignments = {
      jquery_delegated: {
         id: "5540bbc17fd7b32400e7bb7a",
         title: "Leren delegeren",
-        description: "Maak weer alle p's onzichtbaar als er op een knop in de 'knoppen' div wordt geklikt. Ook als die knop later worden toegevoegd aan de DOM.",
+        description: "Maak weer alle p's onzichtbaar als er op een knop in de 'knoppen' div wordt geklikt. Ook als die knop later wordt toegevoegd aan de DOM.",
         jquery: true,
         html: "<p>Hallo</p>\n<p>Wereld</p>\n<div class=\"knoppen\"><button>Verstop!</button></div>\n<button>Op mij klikken doet niks...</button>",
         points: 10,
