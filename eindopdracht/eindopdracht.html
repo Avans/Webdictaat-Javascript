@@ -29,7 +29,12 @@
 
   <p>Ter inspiratie kan je een kijkje nemen naar <a href="https://strategouitwerking.herokuapp.com/" target="_blank">onze eigen uitwerking</a></p>
 
-  <img src="stratego_organisation.jpg" class="right">
+  <p>Nog nooit Stratego gespeeld? Nox van Nox' Spellenzolder legt het voor je uit:</p>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/YHO46fPTzfY" frameborder="0" allowfullscreen></iframe>
+  <hr>
+
+  <img src="stratego_organisation.jpg" class="right" style="clear: both;">
   <h4>Organisatorische eisen</h4>
 
   <ul>
@@ -52,7 +57,9 @@
 
     <li>Het moet mogelijk zijn om een lijst van alle lopende games te zien, en een game te selecteren om mee verder te spelen.</li>
 
-    <li>Tijdens het spel kan de gebruiker op een vakje schieten als hij aan de beurt is. Met een refresh knop kan de gebruiker zien of hij weer aan de beurt is als hij wacht op de tegenstander (polling mag ook maar wees aardig voor de server, niet 10x per seconde!).</li>
+    <li>Tijdens het spel kan de gebruiker alleen een speelstuk verplaatsen als hij aan de beurt is. Met een refresh knop kan de gebruiker zien of hij weer aan de beurt is als hij wacht op de tegenstander (polling mag ook maar wees aardig voor de server, niet 10x per seconde!).</li>
+
+    <li>Zorg ervoor dat de gebruiker geen zetten kan doen die niet mogen, controleer dit zonder de API te gebruiken.</li>
 
     <li>Als het spel is afgelopen (gewonnen of verloren) laat je dat duidelijk aan de gebruiker zien.</li>
 
