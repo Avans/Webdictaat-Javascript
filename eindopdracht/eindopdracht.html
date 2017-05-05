@@ -22,17 +22,14 @@
 <body>
   <h1>Eindopdracht</h1>
 
-  <p>De Stratego eindopdracht volgt hier in week 2/3</p>
 
-  <p>Voor iedereen die vooruit wil werken kan alvast spieken naar de <a href="https://strategoavans.herokuapp.com/">API</a> die we gaan gebruiken</p>
-<!--
-  <p>De eindopdracht voor dit vak is om het spel <a href="http://nl.wikipedia.org/wiki/Zeeslag_(spel)" target="_blank">zeeslag</a> te maken in je browser. Niet zomaar een zeeslag, maar eentje die je online tegen een computer kan spelen of tegen iemand anders uit jouw klas. We hebben daarvoor een API gemaakt waarmee je moet communiceren om het spel te spelen. De documentatie daarvan vind je op <a href="https://zeeslagavans.herokuapp.com/docs">deze pagina</a></p>
+  <p>De eindopdracht voor dit vak is om het spel <a href="https://nl.wikipedia.org/wiki/Stratego" target="_blank">Stratego</a> te maken in je browser. Niet zomaar een stratego, maar eentje die je online tegen een computer kan spelen of tegen iemand anders uit jouw klas. We hebben daarvoor een API gemaakt waarmee je moet communiceren om het spel te spelen. De documentatie daarvan vind je op <a href="https://strategoavans.herokuapp.com/">deze pagina</a></p>
 
   <p>Je mag jouw versie zo mooi maken als je zelf wil, maar het moet wel aan onderstaande eisen voldoen. Begin niet te lang met wachten om aan de opdracht te beginnen, je hebt zeker een paar weken nodig om het goed af te maken!</p>
 
-  <p>
+  <p>Ter inspiratie kan je een kijkje nemen naar <a href="https://strategouitwerking.herokuapp.com/" target="_blank">onze eigen uitwerking</a></p>
 
-  <img src="battleship_organized.jpg" class="right">
+  <img src="stratego_organisation.jpg" class="right">
   <h4>Organisatorische eisen</h4>
 
   <ul>
@@ -40,34 +37,28 @@
 
     <li>Jullie moeten allebei alle code goed kunnen uitleggen. "Ik weet niet hoe dat werkt want dat heb ik niet gemaakt" levert je minpunten op.</li>
 
-    <li>Het project lever je in op BlackBoard (linkje staat onder Leermiddelen). Dit doe je voor de deadline van maandag 20 juni. Zodra de deadline verstreken is wordt er een mailtje rondgestuurd met de inschrijflink.</li>
+    <li>Het project lever je in op BlackBoard (linkje komt binnenkort beschikbaar). Dit doe je voor de deadline van maandag 19 juni. Zodra de deadline verstreken is wordt er een mailtje rondgestuurd met de inschrijflink.</li>
 
-    <li>Maak ook een klassediagram waarin je aangeeft welke 'klassen' (constructor functies) er zijn en hoe ze zich tot elkaar verhouden. Deze moet je tijdens het assessment kunnen laten zien</li>
-
-    <li>De assessments zijn op de woensdag en donderdag van week 9.</li>
+    <li>De assessments zullen worden gepland in week 9.</li>
   </ul>
 
-  <img src="battleship_firing.jpg" class="right">
+  <img src="stratego_functionality.jpg" class="right" style="clear: both">
   <h4>Functionele eisen:</h4>
 
   <ul>
-    <li>Het spel doorloopt verschillende <i>fases</i>. Een paar fases zijn bijvoorbeeld: Spel uitzoeken, schepen plaatsen, mijn beurt om een vakje te schieten, tegenstanders beurt, einde spel. Volg de flow van het spel zoals beschreven in de <a href="https://zeeslagavans.herokuapp.com/docs#spelregels" target="_blank">API documentatie</a>. Elke fase heeft zijn eigen user interface en regels, je mag bijvoorbeeld niet zelf een vakje schieten als het de beurt van de tegenstander is.</li>
+    <li>Het spel doorloopt verschillende <i>fases</i>. Een paar fases zijn bijvoorbeeld: Spel uitzoeken, speelstukken plaatsen, mijn beurt om een speelstuk te verplaatsen, tegenstanders beurt, einde spel. Volg de flow van het spel zoals beschreven in de <a href="https://strategoavans.herokuapp.com/" target="_blank">API documentatie</a>. Elke fase heeft zijn eigen user interface en regels, je mag bijvoorbeeld niet een speelstuk verplaatsen als het de beurt van de tegenstander is.</li>
 
     <li>Bij het uitzoeken van een spel kan de gebruiker kiezen uit 'Speel tegen een computer' of 'Speel tegen iemand anders'.</li>
 
     <li>Het moet mogelijk zijn om een lijst van alle lopende games te zien, en een game te selecteren om mee verder te spelen.</li>
 
-    <li>De namen en lengtes van de schepen die de gebruiker kan plaatsen haal je uit de API.</li>
-
-    <li>De gebruiker kan bij aanvang van het spel schepen horizontaal of verticaal plaatsen op het bord.</li>
-
-    <li>Tijdens het spel kan de gebruiker op een vakje schieten als hij aan de beurt is. Met een refresh knop kan de gebruiker zien of hij weer aan de beurt is als hij wacht op de tegenstander (polling mag ook maar wees aardig voor de server, niet elke seconde!).</li>
+    <li>Tijdens het spel kan de gebruiker op een vakje schieten als hij aan de beurt is. Met een refresh knop kan de gebruiker zien of hij weer aan de beurt is als hij wacht op de tegenstander (polling mag ook maar wees aardig voor de server, niet 10x per seconde!).</li>
 
     <li>Als het spel is afgelopen (gewonnen of verloren) laat je dat duidelijk aan de gebruiker zien.</li>
 
   </ul>
 
-  <img src="battleship_engine.jpg" class="right">
+  <img src="stratego_technology.jpg" class="right">
   <h4>Technische eisen</h4>
 
   <ul>
@@ -81,12 +72,12 @@
 
     <li>Zorg voor overzichtelijke leesbare JavaScript code. Code die geminified is kunnen we tijdens het assessment niet beoordelen.</li>
 
-    <li>Maak gebruik van constructor functies en prototypes om je code op te delen in verschillende soorten objecten. Denk bijvoorbeeld aan: <code>GameList</code>, <code>Game</code>, <code>Board</code>, <code>Ship</code> en <code>Square</code>. Zorg ervoor dat minstens 80% van je code in de 'methodes' zitten van deze objecten (Dat is minder moeilijk dan het lijkt, in alle C# en Java die je tot nu toe hebt geschreven staat 100% van je code in methodes)</li>
+    <li>Maak gebruik van constructor functies en prototypes om je code op te delen in verschillende soorten objecten. Denk bijvoorbeeld aan: <code>GameList</code>, <code>Game</code>, <code>Board</code>, <code>Piece</code> en <code>Square</code>. Zorg ervoor dat minstens 80% van je code in de 'methodes' zitten van deze objecten (Dat is minder moeilijk dan het lijkt, in alle C# en Java die je tot nu toe hebt geschreven staat 100% van je code in methodes)</li>
 
     <li>Gebruik onze API om online tegen iemand anders zeeslag te kunnen spelen. Alle API aanroepen maak je doormiddel van AJAX requests. Je mag hier jQuery voor gebruiken.</li>
   </ul>
 
-  <img src="battleship_extra.jpg" class="right">
+  <img src="stratego_extra.jpg" class="right">
   <h4>Extra eisen</h4>
 
   <p>Heb je alle functionele eisen goed geimplementeerd? Dan heb je een 7, je kan dan nog 3 bonuspunten verdienen door extra eisen te implementeren:</p>
@@ -94,11 +85,18 @@
   <ul>
     <li>Maak het spel extra mooi met animaties en geluidjes.</li>
 
-    <li>Maak een drag &amp; drop interface voor het plaatsen van scheepjes op het speelbord.</li>
+    <li>Maak een drag &amp; drop interface voor het plaatsen van de startopstelling.</li>
 
-    <li>Voor de absolute 10 moet je zelf nog iets verzinnen. Misschien een knop die automatisch een slimme zet suggereert? Of een mogelijkheid om layouts van schepen op te slaan? Verras ons!</li>
+    <li>Maak gebruik van de websockets API</li>
+
+    <li>Laat de historie van het spel zien</li>
+
+    <li>Deduceer aan de hand van de historie van een potje waar de speelstukken van de tegenstander staan waarvan je het type al weet, en laat dat zien aan de gebruiker.</li>
+
+    <li>Maak een scheiding tussen Model, View en Controller code</li>
+
+    <li>Voor de absolute 10 moet je zelf nog iets verzinnen. Misschien een knop die automatisch een slimme zet suggereert? Of een mogelijkheid om de layout van het bord op te slaan? Verras ons!</li>
 
   </ul>
--->
   </body>
 </html>
