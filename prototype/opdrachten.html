@@ -14,14 +14,14 @@
     <img src="uitwerking-ninja.png" class="screenshot" alt="Uitwerking">
     <h2>Ninja's</h2>
 
-    <p>Deze week gaan we oefenen met constructor functions. In onderstaande code wordt er gebruik gemaakt van een constructor functie die een nieuw ninja plaatje op een specifieke x,y positie op de pagina zet. Elke ninja heeft ook een functie hide() waarmee ze hun sneaky ninja skills kunnen activeren.</p>
+    <p>Deze week gaan we oefenen met classes in JavaScript. In onderstaande code wordt er gebruik gemaakt van een class die een nieuw ninja plaatje op een specifieke x,y positie op de pagina zet. Elke ninja heeft ook een functie hide() waarmee ze hun sneaky ninja skills kunnen activeren.</p>
 
     <code class="pre">var ninja1 = new Ninja(50, 100);
 var ninja2 = new Ninja(200, 200);
 var ninja3 = new Ninja(300, 150);
 ninja3.hide();</code>
 
-    <p>Maak de bijbehorende Ninja constructor function en zorg ervoor dat ze via hun prototype object een hide() functie hebben waarmee ze zichzelf kunnen hiden (opacity veranderen)</p>
+    <p>Maak de bijbehorende Ninja class en zorg ervoor dat ze ook een hide() functie hebben waarmee ze zichzelf kunnen hiden (opacity veranderen)</p>
 
     <p><a href="prototype/ninja.png" class="no_ajax">Ninja plaatje</a>
 
@@ -31,9 +31,9 @@ ninja3.hide();</code>
     <img src="uitwerking-tictactoe.png" class="screenshot" alt="Uitwerking">
     <h2>Boter, Kaas en Eieren</h2>
 
-    <p>Veel implementaties van boter, kaas en eieren op internet maken geen gebruik objecten en prototypes. Vaak is het maar een zooitje van losse functies.</p>
+    <p>Veel implementaties van boter, kaas en eieren op internet maken geen gebruik objecten, prototypes en classes. Vaak is het maar een zooitje van losse functies.</p>
 
-    <p>Maak je eigen versie van Boter, Kaas en eieren waarbij je de staat van het spel in objecten bijhoudt. Maak de volgende constructor functions: <code>TicTacToe</code>, <code>Player</code> en <code>Square</code>. het TicTacToe object heeft 9 Square objecten en 2 Player objecten. De Square objecten houden bij welk symbool er op een vakje staat.</p>
+    <p>Maak je eigen versie van Boter, Kaas en eieren waarbij je de staat van het spel in objecten bijhoudt. Maak de volgende classes: <code>TicTacToe</code>, <code>Player</code> en <code>Square</code>. het TicTacToe object heeft 9 Square objecten en 2 Player objecten. De Square objecten houden bij welk symbool er op een vakje staat.</p>
 
     <p>Zet alle functionaliteit van het spel in de 'methode' functies van de objecten.</p>
 
@@ -44,17 +44,17 @@ ninja3.hide();</code>
   <div class="assignment hard">
     <h2>Ninja 2</h2>
 
-    <p>Breid het Ninja programma uit zodat elke <code>Ninja</code> een <code>Human</code> prototype heeft. Elke <code>Ninja</code> kan een <code>Katana</code> of een <code>DragonStar</code> instantie hebben, die allebei <code>Weapon</code> als prototype hebben.. Verzin voor elk prototype object functies die daarbij horen (zoals walk(), strike(), throw(), use(). Implementeer ze met een simpele console.log()). Test je programma door verschillende ninja's en wapens te maken en ze die te laten gebruiken.</p>
+    <p>Breid het Ninja programma uit zodat elke <code>Ninja</code> overerft van een <code>Human</code>. Elke <code>Ninja</code> kan een <code>Katana</code> of een <code>DragonStar</code> instantie hebben, die allebei overerven van <code>Weapon</code>. Verzin voor elk prototype object functies die daarbij horen (zoals walk(), strike(), throw(), use(). Implementeer ze met een simpele console.log()). Test je programma door verschillende ninja's en wapens te maken en ze die te laten gebruiken.</p>
   </div>
 
   <sp-challenge assignment="prototype_reverse"></sp-challenge>
 
-  <!--div class="assignment">
-    <img src="battleship_game.jpg" class="pull-right">
+  <div class="assignment">
+    <img src="stratego_game.png" style="width: 40%; float: right;">
      <h1>Huiswerk</h1>
 
-      <p>Een van de eisen van de eindopdracht is om de logica van het spel onder te brengen in objecten. Bedenk welke klassen je nodig hebt om een spelletje zeeslag te kunnen spelen (denk bijvoorbeeld aan <code>Board</code> en <code>Square</code>) en maak deze aan in jouw zeeslag project. Geef deze objecten via hun prototype object een paar handige methodes zodat je bijvoorbeeld een vakje kan raken of een schip aan het bord kan toevoegen.</p>
-   </div-->
+      <p>Een van de eisen van de eindopdracht is om de logica van het spel onder te brengen in objecten. Bedenk welke klassen je nodig hebt om een spelletje Stratego te kunnen spelen (denk bijvoorbeeld aan <code>Game</code>, <code>Board</code>, <code>Piece</code> en <code>Square</code>) en maak deze aan in jouw zeeslag project. Geef deze objecten via hun prototype object een paar handige methodes zodat je bijvoorbeeld een speelstuk kan verplaatsen of bepalen of een speelstuk op een bepaald vakje mag staan.</p>
+   </div>
 
   </body>
 </html>
