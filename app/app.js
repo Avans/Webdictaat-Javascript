@@ -130,57 +130,61 @@ app.directive('spChallenge', function($compile, UserFactory) {
                 // Set up an iframe to run code in
                 var iframe = $('<iframe>');
                 $('body').append(iframe);
-                iframe.contents().find('body').append(assignment.html);
                 var frameWindow = iframe[0].contentWindow;
 
-                if(assignment.prepare) {
-                    assignment.prepare(frameWindow);
-                }
+                var interval = setInterval(() => {
+                    if(frameWindow.document.readyState === 'complete') {
+                        clearInterval(interval);
 
-                // Load jQuery
-                if(assignment.jquery) {
-                    var jquerySource = '';
-                    var f = $.ajax('static/js/jquery.js', {
-                        async: false,
-                        cache: true,
-                        success: function(data) {
-                            jquerySource = data;
+                        iframe.contents().find('body').append(assignment.html);
+
+                        if(assignment.prepare) {
+                            assignment.prepare(frameWindow);
                         }
-                    });
-                    frameWindow.eval(jquerySource);
-                }
 
-                try {
+                        // Load jQuery
+                        if(assignment.jquery) {
+                            var jquerySource = '';
+                            var f = $.ajax('static/js/jquery.js', {
+                                async: false,
+                                cache: true,
+                                success: function(data) {
+                                    jquerySource = data;
+                                }
+                            });
+                            frameWindow.eval(jquerySource);
+                        }
 
-                    // Run the code!
-                    frameWindow.eval(user_code);
+                        try {
+                            // Run the code!
+                            frameWindow.eval(user_code);
 
-                    // Test the return value
-                    var returnValue = frameWindow.eval(assignment.return);
-                    assignment.tester(returnValue, user_code);
+                            // Test the return value
+                            var returnValue = frameWindow.eval(assignment.return);
+                            assignment.tester(returnValue, user_code);
 
-                    // No error, complete the assignment!
-                    UserFactory.completeAssignment(assignment.id, assignment.points);
+                            // No error, complete the assignment!
+                            UserFactory.completeAssignment(assignment.id, assignment.points);
 
-                    $scope.completed = true;
-                    $scope.element.find('.live_assignment').addClass('completed');
-                    $scope.element.find('.complete')
-                        .slideDown()
-                        .delay(1000)
-                        .slideUp();
+                            $scope.completed = true;
+                            $scope.element.find('.live_assignment').addClass('completed');
+                            $scope.element.find('.complete')
+                                .slideDown()
+                                .delay(1000)
+                                .slideUp();
 
-                } catch(e) {
-                    // Show error to user
-                    $scope.element.find('.error').html("Error: " + e)
-                        .slideDown()
-                        .delay(3000)
-                        .slideUp();
-                } finally {
-                    iframe.remove();
-                }
+                        } catch(e) {
+                            // Show error to user
+                            $scope.element.find('.error').html("Error: " + e)
+                                .slideDown()
+                                .delay(3000)
+                                .slideUp();
+                        } finally {
+                            iframe.remove();
+                        }
+                    }
+                }, 50);
 			}
-
-
 		}
 	};
 });
